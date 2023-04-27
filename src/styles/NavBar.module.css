@@ -1,0 +1,14 @@
+.NavBrand {
+  font-size: 2em;
+  font-weight: bold;
+  color: #222222;
+}
+
+.NavLink {
+  color: #222222;
+}
+
+.NavLink:hover {
+  color: #222222;
+  text-decoration: underline;
+}
