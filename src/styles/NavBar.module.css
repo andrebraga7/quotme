@@ -4,6 +4,20 @@
   color: #222222;
 }
 
+.NavBarMobile {
+  padding: 8px 0;
+  color: #222222;
+}
+
+.NavBarMobile:hover {
+  color: #222222;
+  text-decoration: underline;
+}
+
+.NavBarMobile i {
+  font-size: 1.3em;
+}
+
 .NavLink {
   color: #222222;
 }
