@@ -1,6 +1,6 @@
 .NavBrand {
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 800;
   color: #222222;
 }
 
@@ -20,6 +20,19 @@
 
 .NavLink {
   color: #222222;
+}
+
+.AddQuoteButton {
+  color: #222222;
+  border: 2px solid;
+  border-radius: 20px;
+}
+
+.AddQuoteButton:hover {
+  color: white;
+  background: #222222;
+  text-decoration: none;
+  border-color: #222222;
 }
 
 .NavLink:hover {
