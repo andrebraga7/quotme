@@ -4,11 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 function NavBar() {
-  const [expanded, setExpanded] = useState(false);
-
   const currentUser = true;
+
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const loggedOutLinks = (
     <>
@@ -63,14 +64,22 @@ function NavBar() {
 
   return (
     <>
-      <Navbar expand="md" className="justify-content-around">
+      <Navbar
+        expanded={expanded}
+        expand="md"
+        className="justify-content-around"
+      >
         <Container className="m-2">
           <Navbar.Brand>
             <NavLink className={styles.NavBrand} to="/">
               Quotme
             </NavLink>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            ref={ref}
+            onClick={() => setExpanded(!expanded)}
+            aria-controls="basic-navbar-nav"
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavLink
