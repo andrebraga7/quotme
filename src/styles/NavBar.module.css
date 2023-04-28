@@ -2,11 +2,17 @@
   font-size: 2em;
   font-weight: 800;
   color: #222222;
+  text-decoration: none;
+}
+
+.NavBrand:hover {
+  color: #222222;
 }
 
 .NavBarMobile {
   padding: 8px 0;
   color: #222222;
+  text-decoration: none;
 }
 
 .NavBarMobile:hover {
@@ -20,12 +26,20 @@
 
 .NavLink {
   color: #222222;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.NavLink:hover {
+  color: #222222;
 }
 
 .AddQuoteButton {
   color: #222222;
   border: 2px solid;
   border-radius: 20px;
+  padding: 8px;
+  text-decoration: none;
 }
 
 .AddQuoteButton:hover {
@@ -33,9 +47,4 @@
   background: #222222;
   text-decoration: none;
   border-color: #222222;
-}
-
-.NavLink:hover {
-  color: #222222;
-  text-decoration: underline;
 }

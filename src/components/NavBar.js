@@ -1,98 +1,124 @@
-import React from "react";
+import { React, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "../styles/NavBar.module.css";
-
-const currentUser = null;
-
-const loggedOutLinks = (
-  <>
-    <Nav.Link href="#" className={styles.NavLink}>
-      Login
-    </Nav.Link>
-    <Nav.Link href="#" className={styles.NavLink}>
-      Sign Up
-    </Nav.Link>
-  </>
-);
-
-const loggedInLinks = (
-  <>
-    <Nav.Link href="#" className={`${styles.NavLink} d-none d-md-inline-block`}>
-      Profile
-    </Nav.Link>
-    <Nav.Link href="#" className={styles.NavLink}>
-      Logout
-    </Nav.Link>
-    <Nav.Link href="#" className={`${styles.AddQuoteButton} d-none d-md-inline-block`}>
-    <i className="fa-solid fa-plus"></i> Quote
-    </Nav.Link>
-  </>
-);
-
-const addQuoteIcon = (
-  <Nav.Link className={`d-flex flex-column ${styles.NavBarMobile}`}>
-    <i className="fa-solid fa-square-plus"></i>
-    <span>Quote</span>
-  </Nav.Link>
-);
-
-const profileIcon = (
-  <Nav.Link className={`d-flex flex-column ${styles.NavBarMobile}`}>
-    <i className="fa-regular fa-user"></i>
-    <span>Profile</span>
-  </Nav.Link>
-);
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
+  const [expanded, setExpanded] = useState(false);
+
+  const currentUser = true;
+
+  const loggedOutLinks = (
+    <>
+      <NavLink to="/login" className={styles.NavLink}>
+        Login
+      </NavLink>
+      <NavLink to="/signup" className={styles.NavLink}>
+        Sign Up
+      </NavLink>
+    </>
+  );
+
+  const loggedInLinks = (
+    <>
+      <NavLink
+        to="/profile"
+        className={`${styles.NavLink} d-none d-md-inline-block`}
+      >
+        Profile
+      </NavLink>
+      <NavLink to="/logout" className={styles.NavLink}>
+        Logout
+      </NavLink>
+      <NavLink
+        to="/quotes/create"
+        className={`${styles.AddQuoteButton} d-none d-md-inline-block`}
+      >
+        <i className="fa-solid fa-plus"></i> Quote
+      </NavLink>
+    </>
+  );
+
+  const addQuoteIcon = (
+    <NavLink
+      className={`d-flex flex-column ${styles.NavBarMobile}`}
+      to="/quotes/create"
+    >
+      <i className="fa-solid fa-square-plus"></i>
+      <span>Quote</span>
+    </NavLink>
+  );
+
+  const profileIcon = (
+    <NavLink
+      className={`d-flex flex-column ${styles.NavBarMobile}`}
+      to="/profile"
+    >
+      <i className="fa-regular fa-user"></i>
+      <span>Profile</span>
+    </NavLink>
+  );
+
   return (
     <>
       <Navbar expand="md" className="justify-content-around">
         <Container className="m-2">
-          <Navbar.Brand className={styles.NavBrand} href="#">
-            Quotme
+          <Navbar.Brand>
+            <NavLink className={styles.NavBrand} to="/">
+              Quotme
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link
-                href="#"
+              <NavLink
                 className={`${styles.NavLink} d-none d-md-inline-block`}
+                to="/"
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
-                href="#"
+              </NavLink>
+              <NavLink
                 className={`${styles.NavLink} d-none d-md-inline-block`}
+                to="/discover"
               >
                 Discover
-              </Nav.Link>
-              <Nav.Link
-                href="#"
+              </NavLink>
+              <NavLink
                 className={`${styles.NavLink} d-none d-md-inline-block`}
+                to="/authors"
               >
                 Authors
-              </Nav.Link>
+              </NavLink>
               {currentUser ? loggedInLinks : loggedOutLinks}
             </Nav>
           </Navbar.Collapse>
         </Container>
         <Container className="d-block d-md-none">
           <Nav className="d-flex flex-row justify-content-around">
-            <Nav.Link className={`d-flex flex-column ${styles.NavBarMobile}`}>
+            <NavLink
+              className={`d-flex flex-column ${styles.NavBarMobile}`}
+              to="/"
+            >
               <i className="fas fa-home"></i>
               <span>Home</span>
-            </Nav.Link>
-            <Nav.Link className={`d-flex flex-column ${styles.NavBarMobile}`}>
+            </NavLink>
+            <NavLink
+              className={`d-flex flex-column ${styles.NavBarMobile}`}
+              to="/discover"
+            >
               <i className="fa-regular fa-compass"></i>
               <span>Discover</span>
-            </Nav.Link>
+            </NavLink>
             {currentUser && addQuoteIcon}
-            <Nav.Link className={`d-flex flex-column ${styles.NavBarMobile}`}>
+            <NavLink
+              className={`d-flex flex-column ${styles.NavBarMobile}`}
+              to="/authors"
+            >
               <i className="fa-solid fa-pen-fancy"></i>
               <span>Authors</span>
-            </Nav.Link>
+            </NavLink>
             {currentUser && profileIcon}
           </Nav>
         </Container>
