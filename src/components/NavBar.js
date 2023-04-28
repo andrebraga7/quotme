@@ -7,16 +7,26 @@ import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 function NavBar() {
-  const currentUser = true;
+  const currentUser = null;
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const loggedOutLinks = (
     <>
-      <NavLink to="/login" className={styles.NavLink}>
+      <NavLink
+        to="/login"
+        className={({ isActive }) =>
+          isActive ? styles.Active : styles.NavLink
+        }
+      >
         Login
       </NavLink>
-      <NavLink to="/signup" className={styles.NavLink}>
+      <NavLink
+        to="/signup"
+        className={({ isActive }) =>
+          isActive ? styles.Active : styles.NavLink
+        }
+      >
         Sign Up
       </NavLink>
     </>
@@ -26,11 +36,20 @@ function NavBar() {
     <>
       <NavLink
         to="/profile"
-        className={`${styles.NavLink} d-none d-md-inline-block`}
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.Active} d-none d-md-inline-block`
+            : `${styles.NavLink} d-none d-md-inline-block`
+        }
       >
         Profile
       </NavLink>
-      <NavLink to="/logout" className={styles.NavLink}>
+      <NavLink
+        to="/logout"
+        className={({ isActive }) =>
+          isActive ? styles.Active : styles.NavLink
+        }
+      >
         Logout
       </NavLink>
       <NavLink
@@ -83,19 +102,31 @@ function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavLink
-                className={`${styles.NavLink} d-none d-md-inline-block`}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.Active} d-none d-md-inline-block`
+                    : `${styles.NavLink} d-none d-md-inline-block`
+                }
                 to="/"
               >
                 Home
               </NavLink>
               <NavLink
-                className={`${styles.NavLink} d-none d-md-inline-block`}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.Active} d-none d-md-inline-block`
+                    : `${styles.NavLink} d-none d-md-inline-block`
+                }
                 to="/discover"
               >
                 Discover
               </NavLink>
               <NavLink
-                className={`${styles.NavLink} d-none d-md-inline-block`}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.Active} d-none d-md-inline-block`
+                    : `${styles.NavLink} d-none d-md-inline-block`
+                }
                 to="/authors"
               >
                 Authors
