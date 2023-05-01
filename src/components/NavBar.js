@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 function NavBar() {
-  const currentUser = null;
+  const currentUser = true;
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 

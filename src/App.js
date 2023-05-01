@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import "./App.css";
+import "./App.module.css";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 
