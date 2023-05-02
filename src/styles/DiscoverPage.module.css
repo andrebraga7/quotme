@@ -1,0 +1,28 @@
+.Row {
+  min-height: calc(90vh - 170px);
+}
+
+.Header {
+  font-size: 1.5em;
+  padding: 1rem 0;
+}
+
+.Group {
+  padding-bottom: 1rem;
+}
+
+.Input {
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.Link {
+  color: #222222;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .Row {
+    min-height: calc(90vh - 102px);
+  }
+}

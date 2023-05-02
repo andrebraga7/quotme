@@ -1,0 +1,19 @@
+.Row {
+  min-height: calc(90vh - 170px);
+}
+
+.Header {
+  font-size: 1.5em;
+  padding: 1rem 0;
+}
+
+.Link {
+  color: #222222;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .Row {
+    min-height: calc(90vh - 102px);
+  }
+}

@@ -9,6 +9,8 @@ import Login from "./pages/auth/Login";
 import QuoteCreateForm from "./pages/quotes/QuoteCreateForm";
 import Home from "./pages/home/Home";
 import Footer from "./components/Footer";
+import DiscoverPage from "./pages/quotes/DiscoverPage";
+import QuotePage from "./pages/quotes/QuotePage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -21,10 +23,11 @@ function App() {
         <Routes>
           <Route path="*" element={<p>Not Found.</p>} />
           <Route path="/" element={<Home />} />
+          <Route path="/discover" element={<DiscoverPage />} />
+          <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
-          <Route path="/discover" element={<p>Discover</p>} />
         </Routes>
       </Container>
       <Footer />
