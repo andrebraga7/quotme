@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Alert from "react-bootstrap/Alert";
 
 function QuoteCreateForm() {
   // useState definitions
@@ -19,6 +20,8 @@ function QuoteCreateForm() {
     author: "",
     content: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   // Variables
   const { category, author, content } = quoteData;
@@ -38,8 +41,7 @@ function QuoteCreateForm() {
       const { data } = await axios.post("/quotes/", quoteData);
       navigate(`/quotes/${data.id}`);
     } catch (error) {
-      console.log(error);
-      // setErrors(error.response?.data);
+      setErrors(error.response?.data);
     }
   };
 
@@ -69,6 +71,12 @@ function QuoteCreateForm() {
                 <option value="out_of_the_box">Out of the box</option>
               </Form.Select>
             </FloatingLabel>
+            {errors.category?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
+
             <FloatingLabel
               className={styles.Group}
               controlId="floatingQuote"
@@ -84,6 +92,12 @@ function QuoteCreateForm() {
                 onChange={handleChange}
               />
             </FloatingLabel>
+            {errors.content?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
+
             <FloatingLabel
               className={styles.Group}
               controlId="floatingAuthor"
@@ -98,6 +112,12 @@ function QuoteCreateForm() {
                 onChange={handleChange}
               />
             </FloatingLabel>
+            {errors.author?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
+
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Dark}`}
               type="submit"
