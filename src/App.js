@@ -7,6 +7,8 @@ import { useCurrentUser } from "./contexts/CurrentUserContext";
 import SignUp from "./pages/auth/SignUp";
 import Login from "./pages/auth/Login";
 import QuoteCreateForm from "./pages/quotes/QuoteCreateForm";
+import Home from "./pages/home/Home";
+import Footer from "./components/Footer";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -18,13 +20,14 @@ function App() {
       <Container fluid className={styles.Main}>
         <Routes>
           <Route path="*" element={<p>Not Found.</p>} />
-          <Route path="/" element={<p>Home</p>} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
           <Route path="/discover" element={<p>Discover</p>} />
         </Routes>
       </Container>
+      <Footer />
     </div>
   );
 }
