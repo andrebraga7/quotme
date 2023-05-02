@@ -24,35 +24,42 @@ function Quote(props) {
 
   return (
     <Card className={styles.Quote}>
-      <Card.Body>
+      <Card.Body className={styles.QuoteHeader}>
         <Container className="d-flex align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
+          <Link className={styles.Link} to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
           <div>
-            <span className={styles.QuoteDate}>{updated_at}</span>
+            <span className={styles.QuoteInfo}>{category}</span>
+            <span className={styles.QuoteInfo}>{updated_at}</span>
           </div>
         </Container>
       </Card.Body>
       <Card.Body className={styles.QuoteBody}>
-        <Container className="text-start">
-          <i className="fa-solid fa-quote-left"></i>
-        </Container>
-        <Container>
-          <h1>{content}</h1>
-        </Container>
+        <Link className={styles.Content} to={`/quotes/${id}`}>
+          <Container className="text-start">
+            <i className="fa-solid fa-quote-left"></i>
+          </Container>
+          <Container>
+            <h1>{content}</h1>
+          </Container>
+        </Link>
         <Container className="text-end">
           <i className="fa-solid fa-quote-right"></i>
         </Container>
-        <Container className={styles.Author}>by {author}</Container>
+        <Link className={styles.Author} to={`/authors/${author}`}>
+        <Container>by {author}</Container>
+        </Link>
       </Card.Body>
       <Card.Body className={styles.Footer}>
         <span>
-          <i className="fa-regular fa-comment"></i>{comments_count}
+          <i className="fa-regular fa-comment"></i>
+          {comments_count}
         </span>
         <span>
-          <i className="fa-regular fa-thumbs-up"></i>{likes_count}
+          <i className="fa-regular fa-thumbs-up"></i>
+          {likes_count}
         </span>
         <span>
           <i className="fa-regular fa-bookmark"></i>
