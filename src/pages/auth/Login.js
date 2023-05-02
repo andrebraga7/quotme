@@ -4,6 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { setTokenTimestamp } from "../../utils/utils";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -42,7 +43,8 @@ function Login() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      navigate("/");
+      setTokenTimestamp(data);
+      navigate(-1);
     } catch (error) {
       setErrors(error.response?.data);
     }

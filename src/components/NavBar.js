@@ -8,6 +8,7 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
+import { removeTokenTimestamp } from "../utils/utils";
 
 // React Bootstrap imports
 import Container from "react-bootstrap/Container";
@@ -27,6 +28,7 @@ function NavBar() {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (error) {
       console.log(error);
     }

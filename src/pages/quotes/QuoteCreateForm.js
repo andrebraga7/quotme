@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/QuoteCreateForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import axios from "axios";
+import { axiosRes } from "../../api/axiosDefaults";
 import { useNavigate } from "react-router-dom";
 
 // React Bootstrap imports
@@ -38,7 +38,7 @@ function QuoteCreateForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post("/quotes/", quoteData);
+      const { data } = await axiosRes.post("/quotes/", quoteData);
       navigate(`/quotes/${data.id}`);
     } catch (error) {
       setErrors(error.response?.data);
