@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/SignUp.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -121,6 +121,9 @@ function SignUp() {
             ))}
           </Form>
         </Card>
+        <p className="mt-3">
+          Already have an account? <Link className={styles.Link} to="/login">Login here</Link>
+        </p>
       </Col>
     </Row>
   );

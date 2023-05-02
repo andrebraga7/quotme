@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
 
@@ -107,6 +107,9 @@ function Login() {
             ))}
           </Form>
         </Card>
+        <p className="mt-3">
+          Don't have an account? <Link className={styles.Link} to="/signup">Sign up here</Link>
+        </p>
       </Col>
     </Row>
   );
