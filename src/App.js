@@ -5,8 +5,12 @@ import "./api/axiosDefaults";
 import { Routes, Route } from "react-router-dom";
 import SignUp from "./pages/auth/SignUp";
 import Login from "./pages/auth/Login";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
+
   return (
     <div className={styles.App}>
       <NavBar />

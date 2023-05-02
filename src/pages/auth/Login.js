@@ -42,7 +42,6 @@ function Login() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      console.log("logged in");
       navigate("/");
     } catch (error) {
       setErrors(error.response?.data);

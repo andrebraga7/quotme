@@ -1,13 +1,17 @@
-import { React, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { React } from "react";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
+
+// React Bootstrap imports
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Image from "react-bootstrap/Image";
 
 function NavBar() {
-  const currentUser = null;
+  const currentUser = useCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -35,16 +39,6 @@ function NavBar() {
   const loggedInLinks = (
     <>
       <NavLink
-        to="/profile"
-        className={({ isActive }) =>
-          isActive
-            ? `${styles.Active} d-none d-md-inline-block`
-            : `${styles.NavLink} d-none d-md-inline-block`
-        }
-      >
-        Profile
-      </NavLink>
-      <NavLink
         to="/logout"
         className={({ isActive }) =>
           isActive ? styles.Active : styles.NavLink
@@ -57,6 +51,16 @@ function NavBar() {
         className={`${styles.AddQuoteButton} d-none d-md-inline-block`}
       >
         <i className="fa-solid fa-plus"></i> Quote
+      </NavLink>
+      <NavLink
+        to="/profile"
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.Active} d-none d-md-inline-block`
+            : `${styles.NavLink} d-none d-md-inline-block`
+        }
+      >
+        <Image src={currentUser?.profile_image} roundedCircle /> Profile
       </NavLink>
     </>
   );
