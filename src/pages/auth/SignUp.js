@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../../styles/SignUp.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -20,6 +22,7 @@ function SignUp() {
 
   // Variables definitions
   const { username, password1, password2 } = signUpData;
+  const navigate = useNavigate();
 
   // Event handlers
   const handleChange = (event) => {
@@ -29,12 +32,23 @@ function SignUp() {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      console.log("success");
+      navigate("/login");
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+  };
+
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
         <Card body>
           <h1 className={styles.Header}>SIGN UP</h1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <FloatingLabel
               className={styles.Group}
               controlId="floatingUsername"
