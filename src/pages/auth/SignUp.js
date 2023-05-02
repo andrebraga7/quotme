@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/SignUp.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -11,6 +11,24 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 
 function SignUp() {
+  // useState definitions
+  const [signUpData, setSignUpData] = useState({
+    username: "",
+    password1: "",
+    password2: "",
+  });
+
+  // Variables definitions
+  const { username, password1, password2 } = signUpData;
+
+  // Event handlers
+  const handleChange = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
@@ -27,6 +45,8 @@ function SignUp() {
                 type="text"
                 placeholder="Username"
                 name="username"
+                value={username}
+                onChange={handleChange}
               />
             </FloatingLabel>
             <FloatingLabel
@@ -38,7 +58,9 @@ function SignUp() {
                 className={styles.Input}
                 type="password"
                 placeholder="Password"
-                name="username"
+                name="password1"
+                value={password1}
+                onChange={handleChange}
               />
             </FloatingLabel>
             <FloatingLabel
@@ -50,11 +72,14 @@ function SignUp() {
                 className={styles.Input}
                 type="password"
                 placeholder="Confirm password"
-                name="username"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
               />
             </FloatingLabel>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Dark}`}
+              type="submit"
             >
               Sign Up
             </Button>
