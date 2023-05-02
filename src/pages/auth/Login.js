@@ -3,6 +3,7 @@ import styles from "../../styles/Login.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -15,6 +16,8 @@ import Alert from "react-bootstrap/Alert";
 
 function Login() {
   // useState definitions
+  const setCurrentUser = useSetCurrentUser();
+
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",
@@ -37,7 +40,9 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const {data} = await axios.post("/dj-rest-auth/login/", logInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", logInData);
+      setCurrentUser(data.user);
+      console.log("logged in");
       navigate("/");
     } catch (error) {
       setErrors(error.response?.data);
