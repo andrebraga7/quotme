@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../../styles/QuoteCreateForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -20,6 +22,7 @@ function QuoteCreateForm() {
 
   // Variables
   const { category, author, content } = quoteData;
+  const navigate = useNavigate();
 
   // Event handlers
   const handleChange = (event) => {
@@ -29,12 +32,23 @@ function QuoteCreateForm() {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await axios.post("/quotes/", quoteData);
+      navigate(`/quotes/${data.id}`);
+    } catch (error) {
+      console.log(error);
+      // setErrors(error.response?.data);
+    }
+  };
+
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
         <Card body>
           <h1 className={styles.Header}>ADD QUOTE</h1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <FloatingLabel
               className={styles.Group}
               controlId="floatingCategory"

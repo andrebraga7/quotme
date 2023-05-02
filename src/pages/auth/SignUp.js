@@ -39,7 +39,6 @@ function SignUp() {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
-      console.log("success");
       navigate("/login");
     } catch (error) {
       setErrors(error.response?.data);
