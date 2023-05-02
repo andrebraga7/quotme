@@ -3,12 +3,12 @@ import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
 
 // React Bootstrap imports
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Image from "react-bootstrap/Image";
 
 function NavBar() {
   const currentUser = useCurrentUser();
@@ -60,7 +60,7 @@ function NavBar() {
             : `${styles.NavLink} d-none d-md-inline-block`
         }
       >
-        <Image src={currentUser?.profile_image} roundedCircle /> Profile
+        <Avatar src={currentUser?.profile_image} text={"Profile"} height={40} />
       </NavLink>
     </>
   );
@@ -105,7 +105,7 @@ function NavBar() {
             aria-controls="basic-navbar-nav"
           />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto align-items-center">
               <NavLink
                 className={({ isActive }) =>
                   isActive
