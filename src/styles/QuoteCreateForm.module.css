@@ -1,0 +1,16 @@
+.Row {
+  min-height: 70vh;
+}
+
+.Header {
+  font-size: 1.5em;
+  padding: 1rem 0;
+}
+
+.Group {
+  padding-bottom: 1rem;
+}
+
+.Input {
+  border-radius: 2px;
+}
