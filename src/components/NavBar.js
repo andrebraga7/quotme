@@ -2,8 +2,12 @@ import { React } from "react";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
+import axios from "axios";
 
 // React Bootstrap imports
 import Container from "react-bootstrap/Container";
@@ -11,9 +15,22 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 function NavBar() {
+  // useState definitions
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
+  // variables
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
+  // Event handlers
+  const handleLogout = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const loggedOutLinks = (
     <>
@@ -38,12 +55,7 @@ function NavBar() {
 
   const loggedInLinks = (
     <>
-      <NavLink
-        to="/logout"
-        className={({ isActive }) =>
-          isActive ? styles.Active : styles.NavLink
-        }
-      >
+      <NavLink to="/" onClick={handleLogout} className={styles.NavLink}>
         Logout
       </NavLink>
       <NavLink
@@ -60,7 +72,11 @@ function NavBar() {
             : `${styles.NavLink} d-none d-md-inline-block`
         }
       >
-        <Avatar src={currentUser?.profile_image} text={"Profile"} height={40} />
+        <Avatar
+          src={currentUser?.profile_image}
+          text={currentUser?.username}
+          height={40}
+        />
       </NavLink>
     </>
   );
