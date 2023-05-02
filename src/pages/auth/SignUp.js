@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 function SignUp() {
   // useState definitions
@@ -19,6 +20,8 @@ function SignUp() {
     password1: "",
     password2: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   // Variables definitions
   const { username, password1, password2 } = signUpData;
@@ -39,7 +42,7 @@ function SignUp() {
       console.log("success");
       navigate("/login");
     } catch (error) {
-      console.log(error.response?.data);
+      setErrors(error.response?.data);
     }
   };
 
@@ -63,6 +66,11 @@ function SignUp() {
                 onChange={handleChange}
               />
             </FloatingLabel>
+            {errors.username?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
             <FloatingLabel
               className={styles.Group}
               controlId="floatingPassword1"
@@ -77,6 +85,11 @@ function SignUp() {
                 onChange={handleChange}
               />
             </FloatingLabel>
+            {errors.password1?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
             <FloatingLabel
               className={styles.Group}
               controlId="floatingPassword2"
@@ -91,12 +104,22 @@ function SignUp() {
                 onChange={handleChange}
               />
             </FloatingLabel>
+            {errors.password2?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Dark}`}
               type="submit"
             >
               Sign Up
             </Button>
+            {errors.non_field_errors?.map((message, index) => (
+              <Alert variant="warning" key={index}>
+                {message}
+              </Alert>
+            ))}
           </Form>
         </Card>
       </Col>
