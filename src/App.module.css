@@ -1,4 +1,16 @@
 .App {
   text-align: center;
   font-family: "Libre Franklin", sans-serif;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+.Main {
+  padding-top: 170px;
+}
+
+@media screen and (min-width: 768px) {
+  .Main {
+    padding-top: 102px;
+  }
 }

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 function NavBar() {
-  const currentUser = true;
+  const currentUser = null;
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -86,7 +86,8 @@ function NavBar() {
       <Navbar
         expanded={expanded}
         expand="md"
-        className="justify-content-around"
+        className={`${styles.NavBar} justify-content-around`}
+        fixed="top"
       >
         <Container className="m-2">
           <Navbar.Brand>

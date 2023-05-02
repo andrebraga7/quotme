@@ -1,0 +1,25 @@
+.Button {
+  height: 40px;
+  border-radius: 2px;
+}
+
+.Wide {
+  width: 100%;
+}
+
+.Dark {
+  background-color: #222222;
+  border: none;
+}
+
+.Dark:hover {
+  background-color: #6e7377;
+}
+
+.Dark:hover:active {
+  background-color: #6e7377;
+}
+
+.Dark:active {
+  background-color: #6e7377;
+}
