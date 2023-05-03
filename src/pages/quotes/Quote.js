@@ -18,6 +18,8 @@ function Quote(props) {
     profile_id,
     profile_image,
     like_id,
+    save_id,
+    author_id,
     likes_count,
     comments_count,
   } = props;
@@ -48,7 +50,7 @@ function Quote(props) {
         <Container className="text-end">
           <i className="fa-solid fa-quote-right"></i>
         </Container>
-        <Link className={styles.Author} to={`/authors/${author}`}>
+        <Link className={styles.Author} to={`/authors/${author_id}`}>
         <Container>by {author}</Container>
         </Link>
       </Card.Body>
