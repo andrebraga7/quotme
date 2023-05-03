@@ -1,0 +1,14 @@
+.Comment {
+  border: 1px solid #d7d8db;
+  border-radius: 3px;
+  margin-bottom: 3vh;
+}
+
+.Group {
+  padding-bottom: 1rem;
+}
+
+.Input {
+  border: none;
+  border-bottom: 2px solid #d7d8db;
+}
