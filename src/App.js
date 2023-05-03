@@ -22,8 +22,29 @@ function App() {
       <Container fluid className={styles.Main}>
         <Routes>
           <Route path="*" element={<p>Not Found.</p>} />
-          <Route path="/" element={currentUser ? (<h1>Home Feed</h1>) : <Home />} />
-          <Route path="/discover" element={<QuotesPage title="Discover" subtitle="Discover new quotes from the community."/>} />
+          <Route
+            path="/"
+            element={
+              currentUser ? (
+                <QuotesPage
+                  title="Home Feed"
+                  subtitle="See quotes from people you follow."
+                  filter=""
+                />
+              ) : (
+                <Home />
+              )
+            }
+          />
+          <Route
+            path="/discover"
+            element={
+              <QuotesPage
+                title="Discover"
+                subtitle="Discover new quotes from the community."
+              />
+            }
+          />
           <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
           <Route path="/login" element={<Login />} />
