@@ -64,7 +64,7 @@ function QuoteEditForm() {
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
         <Card body>
-          <h1 className={styles.Header}>ADD QUOTE</h1>
+          <h1 className={styles.Header}>EDIT QUOTE</h1>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel
               className={styles.Group}
@@ -84,7 +84,7 @@ function QuoteEditForm() {
                 <option value="movies">Movies</option>
                 <option value="statements">Statements</option>
                 <option value="originals">Originals</option>
-                <option value="out_of_the_box">Out of the box</option>
+                <option value="out of the box">Out of the box</option>
               </Form.Select>
             </FloatingLabel>
             {errors.category?.map((message, index) => (
