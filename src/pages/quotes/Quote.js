@@ -46,6 +46,22 @@ function Quote(props) {
     }
   };
 
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      setQuotes((prevQuotes) => ({
+        ...prevQuotes,
+        results: prevQuotes.results.map((quote) => {
+          return quote.id === id
+            ? { ...quote, likes_count: quote.likes_count - 1, like_id: null }
+            : quote;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card className={styles.Quote}>
       <Card.Body className={styles.QuoteHeader}>
@@ -81,7 +97,11 @@ function Quote(props) {
           <i className="fa-regular fa-comment"></i>
         </span>
         {comments_count}
-        {currentUser ? (
+        {like_id ? (
+          <span className="ps-5" onClick={handleUnlike}>
+            <i className="fa-solid fa-thumbs-up"></i>
+          </span>
+        ) : currentUser ? (
           <span className="ps-5" onClick={handleLike}>
             <i className="fa-regular fa-thumbs-up"></i>
           </span>

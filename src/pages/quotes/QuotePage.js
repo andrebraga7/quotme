@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Quote from "./Quote";
 import Asset from "../../components/Asset";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
@@ -13,6 +14,7 @@ function QuotePage() {
   const { id } = useParams();
   const [quote, setQuote] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const handleMount = async () => {
@@ -29,7 +31,7 @@ function QuotePage() {
 
     setHasLoaded(false);
     handleMount();
-  }, [id]);
+  }, [id, currentUser]);
 
   return (
     <Row className={styles.Row}>
