@@ -15,6 +15,7 @@
 .CommentCard {
   border: 1px solid #d7d8db;
   border-radius: 3px;
+  min-height: 10vh;
 }
 
 @media screen and (min-width: 768px) {

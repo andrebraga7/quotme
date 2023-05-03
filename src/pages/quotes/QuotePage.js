@@ -46,13 +46,15 @@ function QuotePage() {
         {hasLoaded ? (
           <>
             <Quote {...quote.results[0]} setQuotes={setQuote} quotePage />
-            <CommentCreateForm
-              profile_id={currentUser.profile_id}
-              profile_image={profile_image}
-              quote={id}
-              setQuote={setQuote}
-              setComments={setComments}
-            />
+            {currentUser ? (
+              <CommentCreateForm
+                profile_id={currentUser.profile_id}
+                profile_image={profile_image}
+                quote={id}
+                setQuote={setQuote}
+                setComments={setComments}
+              />
+            ) : null}
             <Card className={styles.CommentCard}>
               {comments.results.length ? (
                 comments.results.map((comment) => (
@@ -63,8 +65,10 @@ function QuotePage() {
                     setComments={setComments}
                   />
                 ))
+              ) : currentUser ? (
+                <p className="my-auto">No comments yet, be the first to comment!</p>
               ) : (
-                <p>No comments yet...</p>
+                <p className="my-auto">No comments yet...</p>
               )}
             </Card>
           </>
