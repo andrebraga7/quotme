@@ -11,6 +11,7 @@ import Home from "./pages/home/Home";
 import Footer from "./components/Footer";
 import QuotePage from "./pages/quotes/QuotePage";
 import QuotesPage from "./pages/quotes/QuotesPage";
+import QuoteEditForm from "./pages/quotes/QuoteEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -48,6 +49,7 @@ function App() {
           />
           <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
+          <Route path="/quotes/:id/edit" element={<QuoteEditForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
