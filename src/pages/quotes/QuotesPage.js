@@ -52,8 +52,8 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
             <>
               {quotes.results.length ? (
                 <InfiniteScroll
-                  children={quotes.results.map((post) => (
-                    <Quote key={post.id} {...post} />
+                  children={quotes.results.map((quote) => (
+                    <Quote key={quote.id} {...quote} setQuotes={setQuotes}/>
                   ))}
                   dataLength={quotes.results.length}
                   loader={<Asset spinner />}

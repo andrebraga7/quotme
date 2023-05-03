@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../../styles/Quote.module.css";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
 
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
@@ -22,7 +24,27 @@ function Quote(props) {
     author_id,
     likes_count,
     comments_count,
+    setQuotes,
   } = props;
+
+  const currentUser = useCurrentUser();
+
+  // Event handlers
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("/likes/", { quote: id });
+      setQuotes((prevQuotes) => ({
+        ...prevQuotes,
+        results: prevQuotes.results.map((quote) => {
+          return quote.id === id
+            ? { ...quote, likes_count: quote.likes_count + 1, like_id: data.id }
+            : quote;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Card className={styles.Quote}>
@@ -51,17 +73,23 @@ function Quote(props) {
           <i className="fa-solid fa-quote-right"></i>
         </Container>
         <Link className={styles.Author} to={`/authors/${author_id}`}>
-        <Container>by {author}</Container>
+          <Container>by {author}</Container>
         </Link>
       </Card.Body>
       <Card.Body className={styles.Footer}>
         <span>
           <i className="fa-regular fa-comment"></i>
-          {comments_count}
         </span>
-        <span className="ps-5">
-          <i className="fa-regular fa-thumbs-up"></i>
-        </span>
+        {comments_count}
+        {currentUser ? (
+          <span className="ps-5" onClick={handleLike}>
+            <i className="fa-regular fa-thumbs-up"></i>
+          </span>
+        ) : (
+          <span className="ps-5">
+            <i className="fa-regular fa-thumbs-up"></i>
+          </span>
+        )}
         {likes_count}
         <span className="ps-5">
           <i className="fa-regular fa-bookmark"></i>

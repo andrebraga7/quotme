@@ -50,6 +50,10 @@
   padding-right: 5px;
 }
 
+.Footer i:hover {
+  color: #2a71ca;
+}
+
 @media screen and (min-width: 768px) {
   .QuoteBody {
     margin: 0 6vw;
