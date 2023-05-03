@@ -10,6 +10,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import { CustomMenu } from "../../components/MoreDropdown";
 
 function Quote(props) {
   const {
@@ -27,6 +28,7 @@ function Quote(props) {
     likes_count,
     comments_count,
     setQuotes,
+    quotePage,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -101,12 +103,14 @@ function Quote(props) {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div>
+          <div className="d-flex">
             <span className={styles.QuoteInfo}>{category}</span>
             <span className={styles.QuoteInfo}>{updated_at}</span>
+            <CustomMenu />
           </div>
         </Container>
       </Card.Body>
+
       <Card.Body className={styles.QuoteBody}>
         <Link to={`/quotes/${id}`}>
           <Container className="text-start">
@@ -123,6 +127,7 @@ function Quote(props) {
           <Container>by {author}</Container>
         </Link>
       </Card.Body>
+
       <Card.Body className={styles.Footer}>
         <span>
           <i className="fa-regular fa-comment"></i>

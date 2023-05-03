@@ -36,7 +36,11 @@ function QuotePage() {
   return (
     <Row className={styles.Row}>
       <Col className="mx-auto mt-4" md={6}>
-        {hasLoaded ? <Quote {...quote.results[0]} setQuotes={setQuote}/> : <Asset spinner />}
+        {hasLoaded ? (
+          <Quote {...quote.results[0]} setQuotes={setQuote} quotePage />
+        ) : (
+          <Asset spinner />
+        )}
       </Col>
     </Row>
   );
