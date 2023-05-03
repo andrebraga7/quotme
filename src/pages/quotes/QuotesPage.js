@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/QuotesPage.module.css";
 import Quote from "./Quote";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Spinner from "react-bootstrap/Spinner";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function QuotesPage() {
   // useState definitions
@@ -35,11 +37,17 @@ function QuotesPage() {
     <Row className={styles.Row}>
       <Col className="mx-auto mt-4" md={6}>
         {hasLoaded ? (
-          quotes.results.map((post) => (
-            <Quote key={post.id} {...post} />
-          ))
-        ): (
-          <Spinner animation="border"/>
+          <InfiniteScroll
+            children={quotes.results.map((post) => (
+              <Quote key={post.id} {...post} />
+            ))}
+            dataLength={quotes.results.length}
+            loader={<Asset spinner />}
+            hasMore={!!quotes.next}
+            next={() => fetchMoreData(quotes, setQuotes)}
+          />
+        ) : (
+          <Asset spinner />
         )}
       </Col>
     </Row>
