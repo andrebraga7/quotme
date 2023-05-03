@@ -62,6 +62,38 @@ function Quote(props) {
     }
   };
 
+  const handleSave = async () => {
+    try {
+      const { data } = await axiosRes.post("/saved/", { quote: id });
+      setQuotes((prevQuotes) => ({
+        ...prevQuotes,
+        results: prevQuotes.results.map((quote) => {
+          return quote.id === id
+            ? { ...quote, save_id: data.id }
+            : quote;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleUnsave = async () => {
+    try {
+      await axiosRes.delete(`/saved/${save_id}/`);
+      setQuotes((prevQuotes) => ({
+        ...prevQuotes,
+        results: prevQuotes.results.map((quote) => {
+          return quote.id === id
+            ? { ...quote, save_id: null }
+            : quote;
+        }),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card className={styles.Quote}>
       <Card.Body className={styles.QuoteHeader}>
@@ -111,9 +143,19 @@ function Quote(props) {
           </span>
         )}
         {likes_count}
-        <span className="ps-5">
-          <i className="fa-regular fa-bookmark"></i>
-        </span>
+        {save_id ? (
+          <span className="ps-5">
+            <i className="fa-solid fa-bookmark"></i>
+          </span>
+        ) : currentUser ? (
+          <span className="ps-5" onClick={handleSave}>
+            <i className="fa-regular fa-bookmark"></i>
+          </span>
+        ) : (
+          <span className="ps-5">
+            <i className="fa-regular fa-bookmark"></i>
+          </span>
+        )}
       </Card.Body>
     </Card>
   );
