@@ -39,11 +39,11 @@ function Quote(props) {
         </Container>
       </Card.Body>
       <Card.Body className={styles.QuoteBody}>
-        <Link className={styles.Content} to={`/quotes/${id}`}>
+        <Link to={`/quotes/${id}`}>
           <Container className="text-start">
             <i className="fa-solid fa-quote-left"></i>
           </Container>
-          <Container>
+          <Container className={styles.Content}>
             <h1>{content}</h1>
           </Container>
         </Link>
@@ -59,11 +59,11 @@ function Quote(props) {
           <i className="fa-regular fa-comment"></i>
           {comments_count}
         </span>
-        <span>
+        <span className="ps-5">
           <i className="fa-regular fa-thumbs-up"></i>
-          {likes_count}
         </span>
-        <span>
+        {likes_count}
+        <span className="ps-5">
           <i className="fa-regular fa-bookmark"></i>
         </span>
       </Card.Body>

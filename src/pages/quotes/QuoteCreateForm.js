@@ -66,9 +66,10 @@ function QuoteCreateForm() {
                 <option>Please select a category</option>
                 <option value="books">Books</option>
                 <option value="lyrics">Lyrics</option>
+                <option value="movies">Movies</option>
                 <option value="statements">Statements</option>
                 <option value="originals">Originals</option>
-                <option value="out_of_the_box">Out of the box</option>
+                <option value="out of the box">Out of the box</option>
               </Form.Select>
             </FloatingLabel>
             {errors.category?.map((message, index) => (
