@@ -8,6 +8,8 @@ import { axiosRes } from "../../api/axiosDefaults";
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 function Quote(props) {
   const {
@@ -28,6 +30,7 @@ function Quote(props) {
   } = props;
 
   const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner;
 
   // Event handlers
   const handleLike = async () => {
@@ -68,9 +71,7 @@ function Quote(props) {
       setQuotes((prevQuotes) => ({
         ...prevQuotes,
         results: prevQuotes.results.map((quote) => {
-          return quote.id === id
-            ? { ...quote, save_id: data.id }
-            : quote;
+          return quote.id === id ? { ...quote, save_id: data.id } : quote;
         }),
       }));
     } catch (error) {
@@ -84,9 +85,7 @@ function Quote(props) {
       setQuotes((prevQuotes) => ({
         ...prevQuotes,
         results: prevQuotes.results.map((quote) => {
-          return quote.id === id
-            ? { ...quote, save_id: null }
-            : quote;
+          return quote.id === id ? { ...quote, save_id: null } : quote;
         }),
       }));
     } catch (error) {
@@ -129,7 +128,14 @@ function Quote(props) {
           <i className="fa-regular fa-comment"></i>
         </span>
         {comments_count}
-        {like_id ? (
+        {is_owner ? (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>You can't like your own quote!</Tooltip>}
+          >
+            <i className="fa-regular fa-thumbs-up ps-5"></i>
+          </OverlayTrigger>
+        ) : like_id ? (
           <span className="ps-5" onClick={handleUnlike}>
             <i className="fa-solid fa-thumbs-up"></i>
           </span>
@@ -138,13 +144,16 @@ function Quote(props) {
             <i className="fa-regular fa-thumbs-up"></i>
           </span>
         ) : (
-          <span className="ps-5">
-            <i className="fa-regular fa-thumbs-up"></i>
-          </span>
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Login to like a quote!</Tooltip>}
+          >
+            <i className="fa-regular fa-thumbs-up ps-5"></i>
+          </OverlayTrigger>
         )}
         {likes_count}
         {save_id ? (
-          <span className="ps-5">
+          <span className="ps-5" onClick={handleUnsave}>
             <i className="fa-solid fa-bookmark"></i>
           </span>
         ) : currentUser ? (
