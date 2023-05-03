@@ -108,7 +108,10 @@ function Login() {
           </Form>
         </Card>
         <p className="mt-3">
-          Don't have an account? <Link className={styles.Link} to="/signup">Sign up here</Link>
+          Don't have an account?{" "}
+          <Link className={styles.Link} to="/signup">
+            Sign up here
+          </Link>
         </p>
       </Col>
     </Row>

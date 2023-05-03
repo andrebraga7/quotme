@@ -1,6 +1,6 @@
 import { React } from "react";
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import {
   useCurrentUser,
@@ -22,6 +22,7 @@ function NavBar() {
 
   // variables
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  const location = useLocation();
 
   // Event handlers
   const handleLogout = async () => {
@@ -57,7 +58,7 @@ function NavBar() {
 
   const loggedInLinks = (
     <>
-      <NavLink to="/" onClick={handleLogout} className={styles.NavLink}>
+      <NavLink to={location.pathname} onClick={handleLogout} className={styles.NavLink}>
         Logout
       </NavLink>
       <NavLink
