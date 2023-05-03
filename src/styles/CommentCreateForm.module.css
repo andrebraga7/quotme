@@ -1,7 +1,7 @@
-.Comment {
+.CommentForm {
   border: 1px solid #d7d8db;
   border-radius: 3px;
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
 }
 
 .Group {

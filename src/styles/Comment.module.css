@@ -1,0 +1,35 @@
+.CommentBody {
+  padding: 8px 16px 16px;
+}
+
+.Owner {
+  color: #2a71ca;
+  margin-right: 10px;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+
+.Date {
+  color: #6e7377;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+p {
+  font-weight: 500;
+  margin: 0;
+}
+
+.ReplyIcon {
+  font-size: 0.8em;
+}
+
+.ReplyIcon i {
+  padding-right: 5px;
+}
+
+.Reply {
+  font-size: 0.8em;
+  margin-left: 10px;
+  font-weight: 700;
+}

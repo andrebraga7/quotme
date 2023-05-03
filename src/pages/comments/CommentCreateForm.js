@@ -12,7 +12,7 @@ import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 
 function CommentCreateForm(props) {
-  const { quote, setQuote, setComments, profileImage, profile_id } = props;
+  const { quote, setQuote, setComments, profile_image, profile_id } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -45,12 +45,12 @@ function CommentCreateForm(props) {
   };
 
   return (
-    <Card body className={styles.Comment}>
+    <Card body className={styles.CommentForm}>
       <Form onSubmit={handleSubmit}>
         <Form.Group className={styles.Group}>
           <InputGroup>
             <Link to={`/profiles/${profile_id}`}>
-              <Avatar src={profileImage} />
+              <Avatar src={profile_image} />
             </Link>
             <Form.Control
               className={styles.Input}

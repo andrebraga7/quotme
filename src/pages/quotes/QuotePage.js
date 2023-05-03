@@ -6,11 +6,12 @@ import Quote from "./Quote";
 import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentCreateForm from "../comments/CommentCreateForm";
+import Comment from "../comments/Comment";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 
 function QuotePage() {
   const { id } = useParams();
@@ -47,16 +48,25 @@ function QuotePage() {
             <Quote {...quote.results[0]} setQuotes={setQuote} quotePage />
             <CommentCreateForm
               profile_id={currentUser.profile_id}
-              profileImage={profile_image}
+              profile_image={profile_image}
               quote={id}
               setQuote={setQuote}
               setComments={setComments}
             />
-            {comments.results.length ? (
-              <p>We have comments</p>
-            ) : (
-              <p>No comments yet...</p>
-            )}
+            <Card className={styles.CommentCard}>
+              {comments.results.length ? (
+                comments.results.map((comment) => (
+                  <Comment
+                    key={comment.id}
+                    {...comment}
+                    setQuote={setQuote}
+                    setComments={setComments}
+                  />
+                ))
+              ) : (
+                <p>No comments yet...</p>
+              )}
+            </Card>
           </>
         ) : (
           <Asset spinner />
