@@ -6,6 +6,7 @@ import Quote from "./Quote";
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Spinner from "react-bootstrap/Spinner";
 
 function QuotesPage() {
   // useState definitions
@@ -26,6 +27,7 @@ function QuotesPage() {
       }
     };
 
+    setHasLoaded(false);
     fetchQuotes();
   }, []);
 
@@ -37,7 +39,7 @@ function QuotesPage() {
             <Quote key={post.id} {...post} />
           ))
         ): (
-          <p>Quotes not loaded</p>
+          <Spinner animation="border"/>
         )}
       </Col>
     </Row>

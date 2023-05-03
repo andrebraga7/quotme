@@ -1,5 +1,5 @@
 .Row {
-  min-height: 70vh;
+  min-height: calc(90vh - 170px);
 }
 
 .Header {
@@ -13,4 +13,10 @@
 
 .Input {
   border-radius: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .Row {
+    min-height: calc(90vh - 102px);
+  }
 }
