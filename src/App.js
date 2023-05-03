@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="*" element={<p>Not Found.</p>} />
           <Route path="/" element={currentUser ? (<h1>Home Feed</h1>) : <Home />} />
-          <Route path="/discover" element={<QuotesPage />} />
+          <Route path="/discover" element={<QuotesPage title="Discover" subtitle="Discover new quotes from the community."/>} />
           <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
           <Route path="/login" element={<Login />} />

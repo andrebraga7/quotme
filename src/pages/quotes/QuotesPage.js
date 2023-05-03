@@ -4,13 +4,14 @@ import styles from "../../styles/QuotesPage.module.css";
 import Quote from "./Quote";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import InfiniteScroll from "react-infinite-scroll-component";
+import Container from "react-bootstrap/Container";
 
-function QuotesPage() {
+function QuotesPage({ title, subtitle, message, filter = "" }) {
   // useState definitions
   const [quotes, setQuotes] = useState({ results: [] });
 
@@ -34,23 +35,31 @@ function QuotesPage() {
   }, []);
 
   return (
-    <Row className={styles.Row}>
-      <Col className="mx-auto mt-4" md={6}>
-        {hasLoaded ? (
-          <InfiniteScroll
-            children={quotes.results.map((post) => (
-              <Quote key={post.id} {...post} />
-            ))}
-            dataLength={quotes.results.length}
-            loader={<Asset spinner />}
-            hasMore={!!quotes.next}
-            next={() => fetchMoreData(quotes, setQuotes)}
-          />
-        ) : (
-          <Asset spinner />
-        )}
-      </Col>
-    </Row>
+    <>
+      <Row className={styles.Header}>
+        <Col className="mx-auto" md={11}>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
+        </Col>
+      </Row>
+      <Row className={styles.Row}>
+        <Col className="mx-auto mt-4" md={6}>
+          {hasLoaded ? (
+            <InfiniteScroll
+              children={quotes.results.map((post) => (
+                <Quote key={post.id} {...post} />
+              ))}
+              dataLength={quotes.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!quotes.next}
+              next={() => fetchMoreData(quotes, setQuotes)}
+            />
+          ) : (
+            <Asset spinner />
+          )}
+        </Col>
+      </Row>
+    </>
   );
 }
 
