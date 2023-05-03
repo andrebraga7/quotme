@@ -5,6 +5,8 @@ import Quote from "./Quote";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useLocation } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
@@ -17,12 +19,14 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
 
   // Variables
   const [hasLoaded, setHasLoaded] = useState(false);
+  const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   // API request for quotes
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const { data } = await axiosReq.get("/quotes/");
+        const { data } = await axiosReq.get(`/quotes/?${filter}`);
         setQuotes(data);
         setHasLoaded(true);
       } catch (error) {
@@ -32,7 +36,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
 
     setHasLoaded(false);
     fetchQuotes();
-  }, []);
+  }, [filter, pathname, currentUser]);
 
   return (
     <>
@@ -45,15 +49,23 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
       <Row className={styles.Row}>
         <Col className="mx-auto mt-4" md={6}>
           {hasLoaded ? (
-            <InfiniteScroll
-              children={quotes.results.map((post) => (
-                <Quote key={post.id} {...post} />
-              ))}
-              dataLength={quotes.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!quotes.next}
-              next={() => fetchMoreData(quotes, setQuotes)}
-            />
+            <>
+              {quotes.results.length ? (
+                <InfiniteScroll
+                  children={quotes.results.map((post) => (
+                    <Quote key={post.id} {...post} />
+                  ))}
+                  dataLength={quotes.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!quotes.next}
+                  next={() => fetchMoreData(quotes, setQuotes)}
+                />
+              ) : (
+                <Container>
+                  <p>{message}</p>
+                </Container>
+              )}
+            </>
           ) : (
             <Asset spinner />
           )}

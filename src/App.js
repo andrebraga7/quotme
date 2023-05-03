@@ -29,7 +29,8 @@ function App() {
                 <QuotesPage
                   title="Home Feed"
                   subtitle="See quotes from people you follow."
-                  filter=""
+                  message="No results found. Adjust the search keyword or follow a user."
+                  filter={`owner__followed__owner__profile=${profile_id}&`}
                 />
               ) : (
                 <Home />
