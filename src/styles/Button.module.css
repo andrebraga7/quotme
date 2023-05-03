@@ -27,3 +27,7 @@
 .Dark:active {
   background-color: #6e7377;
 }
+
+.Dark:disabled {
+  background-color: #6e7377;
+}
