@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Quote.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -33,6 +33,7 @@ function Quote(props) {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const navigate = useNavigate();
 
   // Event handlers
   const handleLike = async () => {
@@ -95,6 +96,19 @@ function Quote(props) {
     }
   };
 
+  const handleEdit = () => {
+    navigate(`/quotes/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/quotes/${id}/`);
+      navigate(-1);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Card className={styles.Quote}>
       <Card.Body className={styles.QuoteHeader}>
@@ -106,7 +120,9 @@ function Quote(props) {
           <div className="d-flex">
             <span className={styles.QuoteInfo}>{category}</span>
             <span className={styles.QuoteInfo}>{updated_at}</span>
-            <CustomMenu />
+            {is_owner && quotePage && (
+              <CustomMenu handleEdit={handleEdit} handleDelete={handleDelete} />
+            )}
           </div>
         </Container>
       </Card.Body>
