@@ -152,7 +152,14 @@ function Quote(props) {
           </OverlayTrigger>
         )}
         {likes_count}
-        {save_id ? (
+        {is_owner ? (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>You can't save your own quote!</Tooltip>}
+          >
+            <i className="fa-regular fa-bookmark ps-5"></i>
+          </OverlayTrigger>
+        ) : save_id ? (
           <span className="ps-5" onClick={handleUnsave}>
             <i className="fa-solid fa-bookmark"></i>
           </span>
@@ -161,9 +168,12 @@ function Quote(props) {
             <i className="fa-regular fa-bookmark"></i>
           </span>
         ) : (
-          <span className="ps-5">
-            <i className="fa-regular fa-bookmark"></i>
-          </span>
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Login to save a quote!</Tooltip>}
+          >
+            <i className="fa-regular fa-bookmark ps-5"></i>
+          </OverlayTrigger>
         )}
       </Card.Body>
     </Card>
