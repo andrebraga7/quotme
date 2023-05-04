@@ -13,7 +13,7 @@ import {
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const profileData = useProfileData();
-  const setProfileData = useSetProfileData();
+  const { setProfileData } = useSetProfileData();
   const [quotes, setQuotes] = useState({ results: [] });
   const { id } = useParams();
   const currentUser = useCurrentUser();

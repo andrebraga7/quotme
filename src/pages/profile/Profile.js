@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { ProfileDropdown } from "../../components/MoreDropdown";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
@@ -25,6 +26,8 @@ function Profile(props) {
     currentUser,
   } = props;
 
+  const { handleFollow, handleUnfollow } = useSetProfileData();
+
   return (
     <Row className={styles.Row}>
       <Col className="mx-auto" md={10} lg={8} xl={6}>
@@ -44,16 +47,24 @@ function Profile(props) {
             </div>
           </Col>
           <Col sm={12} md={4}>
-            {currentUser && !is_owner && (following_id ? (
-              <Button className={`${btnStyles.Follow} ${btnStyles.Dark}`}>
-                Unfollow
-              </Button>
-            ) : (
-              <Button className={`${btnStyles.Follow} ${btnStyles.Dark}`}>
-                Follow
-              </Button>
-            ))}
-            {is_owner && <ProfileDropdown id={id} /> }
+            {currentUser &&
+              !is_owner &&
+              (following_id ? (
+                <Button
+                  className={`${btnStyles.Follow} ${btnStyles.Dark}`}
+                  onClick={() => handleUnfollow(following_id)}
+                >
+                  Unfollow
+                </Button>
+              ) : (
+                <Button
+                  className={`${btnStyles.Follow} ${btnStyles.Dark}`}
+                  onClick={() => handleFollow(id)}
+                >
+                  Follow
+                </Button>
+              ))}
+            {is_owner && <ProfileDropdown id={id} />}
           </Col>
         </Row>
         <Container
