@@ -3,6 +3,12 @@
   border-radius: 2px;
 }
 
+.Follow {
+  border-radius: 70px;
+  min-width: 100px;
+  padding: 4px;
+}
+
 .ButtonComment {
   border-radius: 2px;
 }

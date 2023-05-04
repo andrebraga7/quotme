@@ -1,0 +1,34 @@
+.Row {
+  background-color: #ffffff;
+}
+
+.Image {
+  height: 25vh;
+}
+
+.Title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.Name {
+  font-size: 1em;
+  font-weight: 500;
+  color: #222222;
+}
+
+.Bio {
+  color: #6e7377;
+  margin-bottom: 10px;
+}
+
+.InfoContainer {
+  padding-top: 5px;
+}
+
+.Info {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}

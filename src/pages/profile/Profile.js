@@ -1,0 +1,80 @@
+import React from "react";
+import styles from "../../styles/Profile.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import { ProfileDropdown } from "../../components/MoreDropdown";
+
+// React Bootstrap imports
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+
+function Profile(props) {
+  const {
+    id,
+    owner,
+    name,
+    bio,
+    image,
+    is_owner,
+    following_id,
+    quotes_count,
+    followers_count,
+    following_count,
+    currentUser,
+  } = props;
+
+  return (
+    <Row className={styles.Row}>
+      <Col className="mx-auto" md={10} lg={8} xl={6}>
+        <Row className="align-items-center">
+          <Col md={4}>
+            <Image src={image} roundedCircle className={styles.Image} />
+          </Col>
+          <Col sm={12} md={4}>
+            <span className={styles.Title}>{owner}</span>
+            <div className="mt-2">
+              {name ? <span className={styles.Name}>{name}</span> : null}
+              {bio ? (
+                <p className={styles.Bio}>"{bio}"</p>
+              ) : (
+                <p className={styles.Bio}>"No bio yet..." </p>
+              )}
+            </div>
+          </Col>
+          <Col sm={12} md={4}>
+            {currentUser && !is_owner && (following_id ? (
+              <Button className={`${btnStyles.Follow} ${btnStyles.Dark}`}>
+                Unfollow
+              </Button>
+            ) : (
+              <Button className={`${btnStyles.Follow} ${btnStyles.Dark}`}>
+                Follow
+              </Button>
+            ))}
+            {is_owner && <ProfileDropdown id={id} /> }
+          </Col>
+        </Row>
+        <Container
+          className={`${styles.InfoContainer} d-flex justify-content-evenly mb-3`}
+        >
+          <div className={styles.Info}>
+            <span>{quotes_count}</span>
+            <span>quotes</span>
+          </div>
+          <div className={styles.Info}>
+            <span>{followers_count}</span>
+            <span>followers</span>
+          </div>
+          <div className={styles.Info}>
+            <span>{following_count}</span>
+            <span>following</span>
+          </div>
+        </Container>
+      </Col>
+    </Row>
+  );
+}
+
+export default Profile;

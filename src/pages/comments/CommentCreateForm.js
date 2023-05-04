@@ -46,7 +46,7 @@ function CommentCreateForm(props) {
 
   return (
     <Card body className={styles.CommentForm}>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="text-end">
         <Form.Group className={styles.Group}>
           <InputGroup>
             <Link to={`/profiles/${profile_id}`}>
@@ -64,7 +64,7 @@ function CommentCreateForm(props) {
           </InputGroup>
         </Form.Group>
         <Button
-          className={`${btnStyles.ButtonComment} ${btnStyles.Dark} d-flex ms-auto`}
+          className={`${btnStyles.ButtonComment} ${btnStyles.Dark} ${styles.Button}`}
           disabled={!content.trim()}
           type="submit"
         >

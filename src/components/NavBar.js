@@ -68,7 +68,7 @@ function NavBar() {
         <i className="fa-solid fa-plus"></i> Quote
       </NavLink>
       <NavLink
-        to="/profile"
+        to={`/profiles/${currentUser?.profile_id}`}
         className={({ isActive }) =>
           isActive
             ? `${styles.Active} d-none d-md-inline-block`
@@ -97,7 +97,7 @@ function NavBar() {
   const profileIcon = (
     <NavLink
       className={`d-flex flex-column ${styles.NavBarMobile}`}
-      to="/profile"
+      to={`/profiles/${currentUser?.profile_id}`}
     >
       <i className="fa-regular fa-user"></i>
       <span>Profile</span>
