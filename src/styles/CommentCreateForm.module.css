@@ -5,10 +5,16 @@
 }
 
 .Group {
-  padding-bottom: 1rem;
+  padding-bottom: 7px;
 }
 
 .Input {
   border: none;
   border-bottom: 2px solid #d7d8db;
+  border-radius: 0;
+}
+
+.Button {
+  min-width: 100px;
+  margin-left: 7px;
 }
