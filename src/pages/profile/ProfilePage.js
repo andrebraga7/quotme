@@ -5,10 +5,15 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Profile from "./Profile";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ProfileQuotes from "./ProfileQuotes";
+import {
+  useProfileData,
+  useSetProfileData,
+} from "../../contexts/ProfileDataContext";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [profileData, setProfileData] = useState({});
+  const profileData = useProfileData();
+  const setProfileData = useSetProfileData();
   const [quotes, setQuotes] = useState({ results: [] });
   const { id } = useParams();
   const currentUser = useCurrentUser();
@@ -17,10 +22,12 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: profileData }, { data: quotesData }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}`),
-          axiosReq.get(`/quotes/?owner__profile=${id}`),
-        ]);
+        const [{ data: profileData }, { data: quotesData }] = await Promise.all(
+          [
+            axiosReq.get(`/profiles/${id}`),
+            axiosReq.get(`/quotes/?owner__profile=${id}`),
+          ]
+        );
         setProfileData(profileData);
         setQuotes(quotesData);
         setHasLoaded(true);
@@ -30,7 +37,7 @@ function ProfilePage() {
     };
 
     fetchData();
-  }, [id, currentUser]);
+  }, [id, currentUser, setProfileData]);
 
   return (
     <>
