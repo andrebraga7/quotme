@@ -7,6 +7,8 @@ import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import Comment from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 // React Bootstrap imports
 import Row from "react-bootstrap/Row";
@@ -57,16 +59,24 @@ function QuotePage() {
             ) : null}
             <Card className={styles.CommentCard}>
               {comments.results.length ? (
-                comments.results.map((comment) => (
-                  <Comment
-                    key={comment.id}
-                    {...comment}
-                    setQuote={setQuote}
-                    setComments={setComments}
-                  />
-                ))
+                <InfiniteScroll
+                  children={comments.results.map((comment) => (
+                    <Comment
+                      key={comment.id}
+                      {...comment}
+                      setQuote={setQuote}
+                      setComments={setComments}
+                    />
+                  ))}
+                  dataLength={comments.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!comments.next}
+                  next={() => fetchMoreData(comments, setComments)}
+                />
               ) : currentUser ? (
-                <p className="my-auto">No comments yet, be the first to comment!</p>
+                <p className="my-auto">
+                  No comments yet, be the first to comment!
+                </p>
               ) : (
                 <p className="my-auto">No comments yet...</p>
               )}
