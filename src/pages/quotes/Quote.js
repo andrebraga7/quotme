@@ -10,7 +10,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { CustomMenu } from "../../components/MoreDropdown";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 function Quote(props) {
   const {
@@ -121,7 +121,7 @@ function Quote(props) {
             <span className={styles.QuoteInfo}>{category}</span>
             <span className={styles.QuoteInfo}>{updated_at}</span>
             {is_owner && quotePage && (
-              <CustomMenu handleEdit={handleEdit} handleDelete={handleDelete} />
+              <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
             )}
           </div>
         </Container>

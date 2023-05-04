@@ -4,6 +4,8 @@ import Avatar from "../../components/Avatar";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentEditForm from "./CommentEditForm";
+import { MoreDropdown } from "../../components/MoreDropdown";
+import { axiosRes } from "../../api/axiosDefaults";
 
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
@@ -24,6 +26,14 @@ function Comment(props) {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/comments/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Card.Body className={`${styles.CommentBody}`}>
@@ -51,7 +61,12 @@ function Comment(props) {
           </span>
           <span className={styles.Reply}>Reply</span>
         </div>
-        <span onClick={() => setShowEditForm(true)}>Edit</span>
+        {is_owner && !showEditForm && (
+          <MoreDropdown
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
+        )}
       </div>
       <hr />
     </Card.Body>

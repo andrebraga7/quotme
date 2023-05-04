@@ -10,8 +10,10 @@
 
 .Input {
   border: none;
+  padding: 0;
   border-bottom: 2px solid #d7d8db;
   border-radius: 0;
+  font-weight: 500;
 }
 
 .Button {

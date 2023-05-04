@@ -17,7 +17,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 
 // forwardRef again here!
 // Dropdown needs access to the DOM of the Menu to measure it
-export const CustomMenu = ({ handleEdit, handleDelete }) => {
+export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown drop="start">
       <Dropdown.Toggle as={ThreeDots} />
