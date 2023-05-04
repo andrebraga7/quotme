@@ -30,6 +30,18 @@ function Comment(props) {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}`);
+      setQuote((prevQuote) => ({
+        results: [
+          {
+            ...prevQuote.results[0],
+            comments_count: prevQuote.results[0].comments_count - 1,
+          },
+        ],
+      }));
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.filter((comment) => comment.id !== id),
+      }));
     } catch (error) {
       console.log(error);
     }
