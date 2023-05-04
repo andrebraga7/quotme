@@ -46,10 +46,10 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
 export const ProfileDropdown = ({ id }) => {
   const navigate = useNavigate();
   return (
-    <Dropdown drop="start">
+    <Dropdown>
       <Dropdown.Toggle as={ThreeDots} />
 
-      <Dropdown.Menu className="px-3">
+      <Dropdown.Menu>
         <Dropdown.Item onClick={() => navigate(`/profiles/${id}/edit`)} aria-label="edit-profile">
           <i className="fa-solid fa-pen-to-square" /> edit profile
         </Dropdown.Item>
