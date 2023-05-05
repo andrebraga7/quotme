@@ -26,6 +26,10 @@
   border-left: none;
 }
 
+.Category {
+  border-radius: 2px;
+}
+
 .SearchIcon {
   border-radius: 2px;
   background-color: #ffffff;

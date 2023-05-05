@@ -48,6 +48,7 @@ function App() {
               <QuotesPage
                 title="Discover"
                 subtitle="Discover new quotes from the community."
+                message="Couldn't fin any quotes with these search criteria..."
               />
             }
           />
