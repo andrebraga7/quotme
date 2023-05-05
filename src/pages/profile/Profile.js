@@ -30,12 +30,12 @@ function Profile(props) {
 
   return (
     <Row className={styles.Row}>
-      <Col className="mx-auto" md={10} lg={8} xl={6}>
+      <Col className="mx-auto" sm={10} md={8} lg={6}>
         <Row className="align-items-center">
-          <Col md={4}>
+          <Col>
             <Image src={image} roundedCircle className={styles.Image} />
           </Col>
-          <Col sm={12} md={4}>
+          <Col className="text-sm-start">
             <span className={styles.Title}>{owner}</span>
             <div className="mt-2">
               {name ? <span className={styles.Name}>{name}</span> : null}
@@ -45,8 +45,6 @@ function Profile(props) {
                 <p className={styles.Bio}>"No bio yet..." </p>
               )}
             </div>
-          </Col>
-          <Col sm={12} md={4}>
             {currentUser &&
               !is_owner &&
               (following_id ? (
@@ -64,7 +62,7 @@ function Profile(props) {
                   Follow
                 </Button>
               ))}
-            {is_owner && <ProfileDropdown id={id} />}
+              {is_owner && <ProfileDropdown id={id} />}
           </Col>
         </Row>
         <Container

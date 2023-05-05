@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // Dropdown needs access to the DOM node in order to position the Menu
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i
-    className="fa-solid fa-ellipsis"
+    className={`fa-solid fa-ellipsis ${styles.Toggle}`}
     ref={ref}
     onClick={(e) => {
       e.preventDefault();
