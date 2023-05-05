@@ -17,7 +17,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
-function EditUsername() {
+function UsernameForm() {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const [username, setUsername] = useState("");
@@ -50,7 +50,7 @@ function EditUsername() {
 
   return (
     <Row className={`${styles.Row} justify-content-center`}>
-      <Col className="my-auto" md={6}>
+      <Col className="my-auto" md={4}>
         <Card body>
           <h1 className={styles.Header}>CHANGE USERNAME</h1>
           <Form onSubmit={handleSubmit}>
@@ -98,4 +98,4 @@ function EditUsername() {
   );
 }
 
-export default EditUsername;
+export default UsernameForm;
