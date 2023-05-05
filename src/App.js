@@ -16,6 +16,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import ProfileEditForm from "./pages/profile/ProfileEditForm";
 import UsernameForm from "./pages/profile/UsernameForm";
 import PasswordForm from "./pages/profile/PasswordForm";
+import AuthorPage from "./pages/authors/AuthorPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -48,10 +49,11 @@ function App() {
               <QuotesPage
                 title="Discover"
                 subtitle="Discover new quotes from the community."
-                message="Couldn't fin any quotes with these search criteria..."
+                message="Couldn't find any quotes with these search criteria..."
               />
             }
           />
+          <Route path="/authors/:id" element={<AuthorPage />} />
           <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
           <Route path="/quotes/:id/edit" element={<QuoteEditForm />} />
@@ -59,8 +61,14 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profiles/:id" element={<ProfilePage />} />
           <Route path="/profiles/:id/edit" element={<ProfileEditForm />} />
-          <Route path="/profiles/:id/edit/username" element={<UsernameForm />} />
-          <Route path="/profiles/:id/edit/password" element={<PasswordForm />} />
+          <Route
+            path="/profiles/:id/edit/username"
+            element={<UsernameForm />}
+          />
+          <Route
+            path="/profiles/:id/edit/password"
+            element={<PasswordForm />}
+          />
         </Routes>
       </Container>
       <Footer />
