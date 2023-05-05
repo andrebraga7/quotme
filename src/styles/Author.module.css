@@ -1,0 +1,23 @@
+.Content {
+  min-width: 90%;
+  height: 100px;
+  margin: 0.5em;
+  background-color: #222222;
+  color: #ffffff;
+  display: flex;
+}
+
+.Content:hover {
+  background-color: #2a71ca;
+}
+
+.Name {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .Content {
+    min-width: 25vw;
+  }
+}

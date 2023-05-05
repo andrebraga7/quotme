@@ -23,10 +23,6 @@
   border-left: none;
 }
 
-.Category {
-  border-radius: 2px;
-}
-
 .SearchIcon {
   border-radius: 2px;
   background-color: #ffffff;
@@ -35,6 +31,13 @@
 .Link {
   color: #222222;
   text-decoration: none;
+}
+
+.Scroll {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  overflow: visible;
 }
 
 @media screen and (min-width: 768px) {
