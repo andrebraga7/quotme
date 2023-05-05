@@ -58,8 +58,14 @@ function AuthorPage() {
     <>
       <Row className={styles.Header}>
         <Col className="mx-auto" md={11}>
-          <h1>{author.name}</h1>
-          <p>Has {author.quotes_count} quotes.</p>
+          {hasLoaded ? (
+            <>
+              <h1>{author.name}</h1>
+              <p>Has {author.quotes_count} quotes.</p>
+            </>
+          ) : (
+            <Asset spinner />
+          )}
         </Col>
       </Row>
       <Row className={styles.Row}>

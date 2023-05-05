@@ -75,7 +75,7 @@ function AuthorsPage() {
                   ))}
                 </div>
               ) : (
-                <p>No authors?</p>
+                <p>No authors... I think?</p>
               )}
             </>
           ) : (
