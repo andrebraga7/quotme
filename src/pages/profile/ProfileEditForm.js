@@ -14,6 +14,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
 
 function ProfileEditForm() {
   const currentUser = useCurrentUser();
@@ -21,6 +24,7 @@ function ProfileEditForm() {
   const { id } = useParams();
   const navigate = useNavigate();
   const imageFile = useRef();
+  const [errors, setErrors] = useState({});
 
   const [profileData, setProfileData] = useState({
     name: "",
@@ -48,39 +52,96 @@ function ProfileEditForm() {
     handleMount();
   }, [currentUser, id, navigate]);
 
+  const handleChange = () => {};
+
   return (
     <Row className={styles.Row}>
-      <Col className="mx-auto my-auto" md={8} lg={6}>
-        <Card>
+      <Col className="mx-auto my-auto" md={10} lg={8} xl={6}>
+        <Card body className="my-2">
           <h1 className={styles.Header}>EDIT PROFILE</h1>
           <Form>
-            <Col>
-              <Form.Group controlId="formFile">
-                {image && <Image className={styles.Image} src={image} roundedCircle />}
-                <div>
-                  <Form.Label
-                    className={`${btnStyles.Button} ${btnStyles.Dark} btn mt-2`}
-                  >
-                    Change image
-                  </Form.Label>
+            <Row className="align-items-center">
+              <Col md={6}>
+                <Form.Group controlId="formFile">
+                  {image && (
+                    <Image className={styles.Image} src={image} roundedCircle />
+                  )}
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Dark} btn mt-2 mb-5`}
+                    >
+                      Change image
+                    </Form.Label>
+                    <Form.Control
+                      className="d-none"
+                      type="file"
+                      ref={imageFile}
+                      accept="image/*"
+                      onChange={(event) => {
+                        if (event.target.files.length) {
+                          setProfileData({
+                            ...profileData,
+                            image: URL.createObjectURL(event.target.files[0]),
+                          });
+                        }
+                      }}
+                    />
+                  </div>
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <FloatingLabel
+                  className={styles.Group}
+                  controlId="floatingName"
+                  label="Name"
+                >
                   <Form.Control
-                    className="d-none"
-                    type="file"
-                    ref={imageFile}
-                    accept="image/*"
-                    onChange={(event) => {
-                      if (event.target.files.length) {
-                        setProfileData({
-                          ...profileData,
-                          image: URL.createObjectURL(event.target.files[0]),
-                        });
-                      }
-                    }}
+                    className={styles.Input}
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    value={name}
+                    onChange={handleChange}
                   />
-                </div>
-              </Form.Group>
-            </Col>
-            <Col></Col>
+                </FloatingLabel>
+                {errors.name?.map((message, index) => (
+                  <Alert variant="warning" key={index}>
+                    {message}
+                  </Alert>
+                ))}
+
+                <FloatingLabel
+                  className={styles.Group}
+                  controlId="floatingBio"
+                  label="Quote a little bit about yourself..."
+                >
+                  <Form.Control
+                    className={styles.Input}
+                    style={{ height: "15vh" }}
+                    as="textarea"
+                    placeholder="Quote a little bit about yourself..."
+                    name="bio"
+                    value={bio}
+                    onChange={handleChange}
+                  />
+                </FloatingLabel>
+                {errors.bio?.map((message, index) => (
+                  <Alert variant="warning" key={index}>
+                    {message}
+                  </Alert>
+                ))}
+                <Button
+                  className={`${btnStyles.ButtonComment} ${btnStyles.Dark} ${styles.Button}`}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  className={`${btnStyles.ButtonComment} ${btnStyles.Dark} ${styles.Button}`}
+                >
+                  Save
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </Card>
       </Col>
