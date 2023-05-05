@@ -52,14 +52,42 @@ function ProfileEditForm() {
     handleMount();
   }, [currentUser, id, navigate]);
 
-  const handleChange = () => {};
+  const handleChange = (event) => {
+    setProfileData({
+      ...profileData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("bio", bio);
+
+    if (imageFile?.current?.files[0]) {
+      formData.append("image", imageFile?.current?.files[0]);
+    }
+
+    try {
+      const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
+      setCurrentUser((currentUser) => ({
+        ...currentUser,
+        profile_image: data.image,
+      }));
+      navigate(-1);
+    } catch (error) {
+      setErrors(error.response?.data);
+    }
+  };
 
   return (
     <Row className={styles.Row}>
       <Col className="mx-auto my-auto" md={10} lg={8} xl={6}>
         <Card body className="my-2">
           <h1 className={styles.Header}>EDIT PROFILE</h1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Row className="align-items-center">
               <Col md={6}>
                 <Form.Group controlId="formFile">
@@ -104,7 +132,7 @@ function ProfileEditForm() {
                     onChange={handleChange}
                   />
                 </FloatingLabel>
-                {errors.name?.map((message, index) => (
+                {errors?.name?.map((message, index) => (
                   <Alert variant="warning" key={index}>
                     {message}
                   </Alert>
@@ -125,18 +153,21 @@ function ProfileEditForm() {
                     onChange={handleChange}
                   />
                 </FloatingLabel>
-                {errors.bio?.map((message, index) => (
+                {errors?.bio?.map((message, index) => (
                   <Alert variant="warning" key={index}>
                     {message}
                   </Alert>
                 ))}
                 <Button
                   className={`${btnStyles.ButtonComment} ${btnStyles.Dark} ${styles.Button}`}
+                  type="button"
+                  onClick={() => navigate(-1)}
                 >
                   Cancel
                 </Button>
                 <Button
                   className={`${btnStyles.ButtonComment} ${btnStyles.Dark} ${styles.Button}`}
+                  type="submit"
                 >
                   Save
                 </Button>
