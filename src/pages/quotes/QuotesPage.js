@@ -12,6 +12,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 function QuotesPage({ title, subtitle, message, filter = "" }) {
   // useState definitions
@@ -21,12 +23,15 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const currentUser = useCurrentUser();
+  const [query, setQuery] = useState("");
 
   // API request for quotes
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const { data } = await axiosReq.get(`/quotes/?${filter}`);
+        const { data } = await axiosReq.get(
+          `/quotes/?${filter}search=${query}`
+        );
         setQuotes(data);
         setHasLoaded(true);
       } catch (error) {
@@ -35,8 +40,13 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
     };
 
     setHasLoaded(false);
-    fetchQuotes();
-  }, [filter, pathname, currentUser]);
+    const timer = setTimeout(() => {
+      fetchQuotes();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <>
@@ -48,12 +58,27 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
       </Row>
       <Row className={styles.Row}>
         <Col className="mx-auto mt-4" md={6}>
+          <Form className="mb-4" onSubmit={(event) => event.preventDefault()}>
+            <InputGroup>
+              <InputGroup.Text className={styles.SearchIcon}>
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </InputGroup.Text>
+              <Form.Control
+                className={styles.SearchInput}
+                type="text"
+                placeholder="Search quotes"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            </InputGroup>
+          </Form>
+
           {hasLoaded ? (
             <>
               {quotes.results.length ? (
                 <InfiniteScroll
                   children={quotes.results.map((quote) => (
-                    <Quote key={quote.id} {...quote} setQuotes={setQuotes}/>
+                    <Quote key={quote.id} {...quote} setQuotes={setQuotes} />
                   ))}
                   dataLength={quotes.results.length}
                   loader={<Asset spinner />}

@@ -21,6 +21,16 @@
   padding: 1rem 0;
 }
 
+.SearchInput {
+  border-radius: 2px;
+  border-left: none;
+}
+
+.SearchIcon {
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+
 .Link {
   color: #222222;
   text-decoration: none;
