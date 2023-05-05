@@ -58,7 +58,11 @@ function NavBar() {
 
   const loggedInLinks = (
     <>
-      <NavLink to={location.pathname} onClick={handleLogout} className={styles.NavLink}>
+      <NavLink
+        to={location.pathname}
+        onClick={handleLogout}
+        className={styles.NavLink}
+      >
         Logout
       </NavLink>
       <NavLink
@@ -69,11 +73,7 @@ function NavBar() {
       </NavLink>
       <NavLink
         to={`/profiles/${currentUser?.profile_id}`}
-        className={({ isActive }) =>
-          isActive
-            ? `${styles.Active} d-none d-md-inline-block`
-            : `${styles.NavLink} d-none d-md-inline-block`
-        }
+        className={`${styles.NavLink} d-none d-md-inline-block`}
       >
         <Avatar
           src={currentUser?.profile_image}

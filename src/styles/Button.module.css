@@ -20,20 +20,29 @@
 .Dark {
   background-color: #222222;
   border: none;
+  color: #ffffff;
 }
 
 .Dark:hover {
   background-color: #6e7377;
+  color: #ffffff;
+
 }
 
 .Dark:hover:active {
   background-color: #6e7377;
+  color: #ffffff;
+
 }
 
 .Dark:active {
   background-color: #6e7377;
+  color: #ffffff;
+
 }
 
 .Dark:disabled {
   background-color: #6e7377;
+  color: #ffffff;
+
 }
