@@ -3,6 +3,12 @@
   border-radius: 2px;
 }
 
+.ButtonSpace {
+  min-width: 100px;
+  margin-left: 7px;
+  padding: 3px;
+}
+
 .Follow {
   border-radius: 70px;
   min-width: 100px;

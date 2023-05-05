@@ -62,7 +62,7 @@ function Profile(props) {
                   Follow
                 </Button>
               ))}
-              {is_owner && <ProfileDropdown id={id} />}
+            {is_owner && <ProfileDropdown id={id} />}
           </Col>
         </Row>
         <Container
