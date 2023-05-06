@@ -138,21 +138,22 @@ function QuoteCreateForm() {
               />
 
               {showAuthors &&
-                !(authors.length === 1 && authors[0].name === author) && (
-                  <div className={styles.AuthorList}>
-                    {authors.map((authorObject) => (
-                      <Button
-                        key={authorObject.id}
-                        className={styles.AuthorOption}
-                        name="author"
-                        value={authorObject.name}
-                        onMouseDown={handleChange}
-                      >
-                        {authorObject.name}
-                      </Button>
-                    ))}
-                  </div>
-                )}
+              authors.length &&
+              !(authors.length === 1 && authors[0].name === author) ? (
+                <div className={styles.AuthorList}>
+                  {authors.slice(0, 5).map((authorObject) => (
+                    <Button
+                      key={authorObject.id}
+                      className={styles.AuthorOption}
+                      name="author"
+                      value={authorObject.name}
+                      onMouseDown={handleChange}
+                    >
+                      {authorObject.name}
+                    </Button>
+                  ))}
+                </div>
+              ) : null}
             </FloatingLabel>
             {errors.author?.map((message, index) => (
               <Alert variant="warning" key={index}>

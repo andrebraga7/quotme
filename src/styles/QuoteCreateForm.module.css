@@ -20,28 +20,24 @@
   position: absolute;
   width: 100%;
   padding: 10px;
-  background-color: lightgray;
+  background-color: #ffffff;
+  border: 1px solid #d7d8db;
 }
 
 .AuthorOption {
   display: block;
-  background-color: lightblue;;
+  background-color: #ffffff;
   border: none;
   border-radius: 0;
-  padding: 0;
+  padding: 3px;
   width: 100%;
+  text-align: left;
+  color: #222222;
 }
 
 .AuthorOption:hover {
-  background-color: blue;
-}
-
-datalist {
-  background-color: blue;
-}
-
-datalist option {
-  background-color: red;
+  background-color: #d7d8db;
+  color: #222222;
 }
 
 @media screen and (min-width: 768px) {
