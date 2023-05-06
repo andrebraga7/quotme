@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/QuoteCreateForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { axiosRes } from "../../api/axiosDefaults";
+import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { useNavigate } from "react-router-dom";
 
 // React Bootstrap imports
@@ -22,6 +22,8 @@ function QuoteCreateForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [authors, setAuthors] = useState(["Andre com A", "Coldplay"]);
+  const [showAuthors, setShowAuthors] = useState(false);
 
   // Variables
   const { category, author, content } = quoteData;
@@ -34,6 +36,26 @@ function QuoteCreateForm() {
       [event.target.name]: event.target.value,
     });
   };
+
+  useEffect(() => {
+    const fetchAuthors = async () => {
+      try {
+        const { data } = await axiosReq.get(`/authors/?search=${author}`);
+        setAuthors(data.results);
+        !!author.trim() && setShowAuthors(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    setShowAuthors(false);
+    const timer = setTimeout(() => {
+      fetchAuthors();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [author]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -112,31 +134,29 @@ function QuoteCreateForm() {
                 autoComplete="off"
                 value={author}
                 onChange={handleChange}
+                onBlur={() => setShowAuthors(false)}
               />
 
-              {/* <div className={styles.AuthorList}>
-                <Button
-                  onClick={handleChange}
-                  name="author"
-                  value="Andre com A"
-                  className={styles.AuthorOption}
-                >
-                  Andre com A
-                </Button>
-                <Button
-                  onClick={handleChange}
-                  name="author"
-                  value="Coldplay"
-                  className={styles.AuthorOption}
-                >
-                  Coldplay
-                </Button>
-              </div> */}
-
-              <datalist id="authorOptions" className={styles.AuthorList}>
-                <option>Andre com A</option>
-                <option>Coldplay</option>
-              </datalist>
+              {showAuthors && (
+                <div className={styles.AuthorList}>
+                  <Button
+                    onClick={handleChange}
+                    name="author"
+                    value="Andre com A"
+                    className={styles.AuthorOption}
+                  >
+                    Andre com A
+                  </Button>
+                  <Button
+                    onClick={handleChange}
+                    name="author"
+                    value="Coldplay"
+                    className={styles.AuthorOption}
+                  >
+                    Coldplay
+                  </Button>
+                </div>
+              )}
             </FloatingLabel>
             {errors.author?.map((message, index) => (
               <Alert variant="warning" key={index}>
