@@ -22,7 +22,7 @@ function QuoteCreateForm() {
   });
 
   const [errors, setErrors] = useState({});
-  const [authors, setAuthors] = useState(["Andre com A", "Coldplay"]);
+  const [authors, setAuthors] = useState([]);
   const [showAuthors, setShowAuthors] = useState(false);
 
   // Variables
@@ -137,26 +137,22 @@ function QuoteCreateForm() {
                 onBlur={() => setShowAuthors(false)}
               />
 
-              {showAuthors && (
-                <div className={styles.AuthorList}>
-                  <Button
-                    onClick={handleChange}
-                    name="author"
-                    value="Andre com A"
-                    className={styles.AuthorOption}
-                  >
-                    Andre com A
-                  </Button>
-                  <Button
-                    onClick={handleChange}
-                    name="author"
-                    value="Coldplay"
-                    className={styles.AuthorOption}
-                  >
-                    Coldplay
-                  </Button>
-                </div>
-              )}
+              {showAuthors &&
+                !(authors.length === 1 && authors[0].name === author) && (
+                  <div className={styles.AuthorList}>
+                    {authors.map((authorObject) => (
+                      <Button
+                        key={authorObject.id}
+                        className={styles.AuthorOption}
+                        name="author"
+                        value={authorObject.name}
+                        onMouseDown={handleChange}
+                      >
+                        {authorObject.name}
+                      </Button>
+                    ))}
+                  </div>
+                )}
             </FloatingLabel>
             {errors.author?.map((message, index) => (
               <Alert variant="warning" key={index}>
