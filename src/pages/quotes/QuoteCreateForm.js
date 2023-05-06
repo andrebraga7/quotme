@@ -109,9 +109,16 @@ function QuoteCreateForm() {
                 type="text"
                 placeholder="Author"
                 name="author"
+                list="authorOptions"
+                autoComplete="off"
                 value={author}
                 onChange={handleChange}
               />
+              <datalist id="authorOptions">
+                <option value="One" />
+                <option value="Two" />
+                <option value="Three" />
+              </datalist>
             </FloatingLabel>
             {errors.author?.map((message, index) => (
               <Alert variant="warning" key={index}>
