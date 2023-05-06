@@ -22,6 +22,8 @@ function QuoteEditForm() {
   });
 
   const [errors, setErrors] = useState({});
+  const [authors, setAuthors] = useState([]);
+  const [showAuthors, setShowAuthors] = useState(false);
 
   // Variables
   const { category, author, content } = quoteData;
@@ -29,6 +31,26 @@ function QuoteEditForm() {
   const { id } = useParams();
 
   // Event handlers
+  useEffect(() => {
+    const fetchAuthors = async () => {
+      try {
+        const { data } = await axiosReq.get(`/authors/?search=${author}`);
+        setAuthors(data.results);
+        !!author.trim() && setShowAuthors(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    setShowAuthors(false);
+    const timer = setTimeout(() => {
+      fetchAuthors();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [author]);
+
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -124,9 +146,29 @@ function QuoteEditForm() {
                 type="text"
                 placeholder="Author"
                 name="author"
+                autoComplete="off"
                 value={author}
                 onChange={handleChange}
+                onBlur={() => setShowAuthors(false)}
               />
+
+              {showAuthors &&
+              authors.length &&
+              !(authors.length === 1 && authors[0].name === author) ? (
+                <div className={styles.AuthorList}>
+                  {authors.slice(0, 5).map((authorObject) => (
+                    <Button
+                      key={authorObject.id}
+                      className={styles.AuthorOption}
+                      name="author"
+                      value={authorObject.name}
+                      onMouseDown={handleChange}
+                    >
+                      {authorObject.name}
+                    </Button>
+                  ))}
+                </div>
+              ) : null}
             </FloatingLabel>
             {errors.author?.map((message, index) => (
               <Alert variant="warning" key={index}>
