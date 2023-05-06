@@ -135,7 +135,15 @@ function QuoteEditForm() {
             ))}
 
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Dark}`}
+              className={`${btnStyles.Button} ${btnStyles.Dark} ${btnStyles.ButtonSpace}`}
+              type="button"
+              onClick={() => navigate(-1)}
+            >
+              Cancel
+            </Button>
+
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Dark} ${btnStyles.ButtonSpace}`}
               type="submit"
             >
               Edit quote

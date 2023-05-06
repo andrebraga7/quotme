@@ -109,15 +109,33 @@ function QuoteCreateForm() {
                 type="text"
                 placeholder="Author"
                 name="author"
-                list="authorOptions"
                 autoComplete="off"
                 value={author}
                 onChange={handleChange}
               />
-              <datalist id="authorOptions">
-                <option value="One" />
-                <option value="Two" />
-                <option value="Three" />
+
+              {/* <div className={styles.AuthorList}>
+                <Button
+                  onClick={handleChange}
+                  name="author"
+                  value="Andre com A"
+                  className={styles.AuthorOption}
+                >
+                  Andre com A
+                </Button>
+                <Button
+                  onClick={handleChange}
+                  name="author"
+                  value="Coldplay"
+                  className={styles.AuthorOption}
+                >
+                  Coldplay
+                </Button>
+              </div> */}
+
+              <datalist id="authorOptions" className={styles.AuthorList}>
+                <option>Andre com A</option>
+                <option>Coldplay</option>
               </datalist>
             </FloatingLabel>
             {errors.author?.map((message, index) => (
