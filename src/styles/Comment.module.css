@@ -30,6 +30,19 @@ p {
 
 .Reply {
   font-size: 0.8em;
-  margin-left: 10px;
+  margin-left: 1em;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.Reply:hover {
+  cursor: pointer;
+}
+
+.ViewReplies {
+  margin-left: 1em;
+}
+
+.ViewReplies:hover {
+  cursor: pointer;
 }

@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/Comment.module.css";
 import Avatar from "../../components/Avatar";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentEditForm from "./CommentEditForm";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import { axiosRes } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
+import ReplyCreateForm from "../replies/ReplyCreateForm";
 
 function Comment(props) {
   const {
@@ -24,8 +25,11 @@ function Comment(props) {
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showReplyForm, setShowReplyForm] = useState(false);
+  const [showReplies, setShowReplies] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const [replies, setReplies] = useState({ results: [] });
 
   const handleDelete = async () => {
     try {
@@ -46,6 +50,19 @@ function Comment(props) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/replies/?comment=${id}`);
+        setReplies(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    handleMount();
+  }, [id, setComments]);
 
   return (
     <Card.Body className={`${styles.CommentBody}`}>
@@ -69,9 +86,25 @@ function Comment(props) {
           <span className={styles.ReplyIcon}>
             <i className="fa-solid fa-reply"></i>
             {replies_count}
-            {replies_count > 0 ? "View all replies" : null}
+            {replies_count > 0 ? (
+              <span
+                className={styles.ViewReplies}
+                onClick={() => setShowReplies((showReplies) => !showReplies)}
+              >
+                View all replies
+              </span>
+            ) : null}
           </span>
-          <span className={styles.Reply}>Reply</span>
+          {currentUser && (
+            <span
+              className={styles.Reply}
+              onClick={() =>
+                setShowReplyForm((showReplyForm) => !showReplyForm)
+              }
+            >
+              Reply
+            </span>
+          )}
         </div>
         {is_owner && !showEditForm && (
           <MoreDropdown
@@ -80,6 +113,15 @@ function Comment(props) {
           />
         )}
       </div>
+      {showReplyForm && (
+        <ReplyCreateForm
+          setShowReplyForm={setShowReplyForm}
+          setReplies={setReplies}
+          comment={id}
+          setComments={setComments}
+        />
+      )}
+      {showReplies && <>Replies</>}
       <hr />
     </Card.Body>
   );
