@@ -6,10 +6,14 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CommentEditForm from "./CommentEditForm";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import ReplyCreateForm from "../replies/ReplyCreateForm";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Reply from "../replies/Reply";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
-import ReplyCreateForm from "../replies/ReplyCreateForm";
 
 function Comment(props) {
   const {
@@ -121,7 +125,23 @@ function Comment(props) {
           setComments={setComments}
         />
       )}
-      {showReplies && <>Replies</>}
+      {showReplies && (
+        <InfiniteScroll
+          children={replies.results.map((reply) => (
+            <Reply
+              key={reply.id}
+              {...reply}
+              comment={id}
+              setComments={setComments}
+              setReplies={setReplies}
+            />
+          ))}
+          dataLength={replies.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!replies.next}
+          next={() => fetchMoreData(replies, setReplies)}
+        />
+      )}
       <hr />
     </Card.Body>
   );
