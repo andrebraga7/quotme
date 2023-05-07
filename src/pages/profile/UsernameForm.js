@@ -53,7 +53,7 @@ function UsernameForm() {
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={4}>
-        <Card body>
+        <Card className={styles.Container} body>
           <h1 className={styles.Header}>CHANGE USERNAME</h1>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel

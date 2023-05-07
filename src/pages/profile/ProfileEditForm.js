@@ -87,7 +87,7 @@ function ProfileEditForm() {
   return (
     <Row className={styles.Row}>
       <Col className="mx-auto my-auto" md={10} lg={8} xl={6}>
-        <Card body className="my-2">
+        <Card className={`${styles.Container} my-2`} body>
           <h1 className={styles.Header}>EDIT PROFILE</h1>
           <Form onSubmit={handleSubmit}>
             <Row className="align-items-center">
