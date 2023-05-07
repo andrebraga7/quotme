@@ -7,6 +7,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -19,6 +20,7 @@ import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 
 function ProfileEditForm() {
+  useRedirect("loggedOut");
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { id } = useParams();

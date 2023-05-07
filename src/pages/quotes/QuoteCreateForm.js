@@ -3,6 +3,7 @@ import styles from "../../styles/QuoteCreateForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { useNavigate } from "react-router-dom";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -14,6 +15,8 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
 
 function QuoteCreateForm() {
+  useRedirect("loggedOut");
+
   // useState definitions
   const [quoteData, setQuoteData] = useState({
     category: "",

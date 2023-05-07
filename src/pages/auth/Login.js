@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -18,6 +19,7 @@ import Alert from "react-bootstrap/Alert";
 function Login() {
   // useState definitions
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [logInData, setLogInData] = useState({
     username: "",

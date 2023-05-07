@@ -4,6 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -15,6 +16,7 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
 function PasswordForm() {
+  useRedirect("loggedOut");
   const currentUser = useCurrentUser();
   const [errors, setErrors] = useState({});
   const [userData, setUserData] = useState({

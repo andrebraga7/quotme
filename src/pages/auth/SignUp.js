@@ -3,6 +3,7 @@ import styles from "../../styles/SignUp.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -14,6 +15,8 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
 function SignUp() {
+  useRedirect("loggedIn");
+
   // useState definitions
   const [signUpData, setSignUpData] = useState({
     username: "",
@@ -39,7 +42,7 @@ function SignUp() {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
-      navigate("/login");
+      navigate(-1);
     } catch (error) {
       setErrors(error.response?.data);
     }
