@@ -38,7 +38,7 @@ function QuoteEditForm() {
         setAuthors(data.results);
         !!author.trim() && setShowAuthors(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 
@@ -58,7 +58,7 @@ function QuoteEditForm() {
         const { category, author, content, is_owner } = data;
         is_owner ? setQuoteData({ category, author, content }) : navigate("/");
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

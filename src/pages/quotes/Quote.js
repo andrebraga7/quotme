@@ -48,7 +48,7 @@ function Quote(props) {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -64,7 +64,7 @@ function Quote(props) {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -78,7 +78,7 @@ function Quote(props) {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -92,7 +92,7 @@ function Quote(props) {
         }),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -105,7 +105,7 @@ function Quote(props) {
       await axiosRes.delete(`/quotes/${id}/`);
       navigate(-1);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

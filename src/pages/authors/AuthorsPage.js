@@ -22,7 +22,7 @@ function AuthorsPage() {
         setAuthors(data);
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 
@@ -71,7 +71,7 @@ function AuthorsPage() {
               {authors.results.length ? (
                 <div className="d-flex flex-wrap justify-content-center">
                   {authors.results.map((author) => (
-                    <Author key={author.is} {...author} />
+                    <Author key={author.id} {...author} />
                   ))}
                 </div>
               ) : (

@@ -42,7 +42,7 @@ function ProfileEditForm() {
           const { name, bio, image } = data;
           setProfileData({ name, bio, image });
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       } else {
         navigate(-1);

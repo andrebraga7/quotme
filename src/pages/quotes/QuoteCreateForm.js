@@ -44,7 +44,7 @@ function QuoteCreateForm() {
         setAuthors(data.results);
         !!author.trim() && setShowAuthors(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

@@ -36,7 +36,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
         setQuotes(data);
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

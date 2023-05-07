@@ -32,7 +32,7 @@ function ProfilePage() {
         setQuotes(quotesData);
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

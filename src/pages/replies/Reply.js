@@ -46,7 +46,7 @@ function Reply(props) {
         results: prevReplies.results.filter((reply) => reply.id !== id),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

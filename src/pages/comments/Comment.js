@@ -51,7 +51,7 @@ function Comment(props) {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -61,7 +61,7 @@ function Comment(props) {
         const { data } = await axiosReq.get(`/replies/?comment=${id}`);
         setReplies(data);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

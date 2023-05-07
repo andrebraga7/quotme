@@ -41,7 +41,7 @@ function AuthorPage() {
         setAuthor({ name, quotes_count });
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 
