@@ -77,7 +77,6 @@ function Reply(props) {
           />
         )}
       </div>
-      <hr />
     </Card.Body>
   );
 }

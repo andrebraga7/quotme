@@ -109,6 +109,31 @@ function Comment(props) {
               Reply
             </span>
           )}
+          {showReplyForm && (
+            <ReplyCreateForm
+              setShowReplyForm={setShowReplyForm}
+              setReplies={setReplies}
+              comment={id}
+              setComments={setComments}
+            />
+          )}
+          {showReplies && (
+            <InfiniteScroll
+              children={replies.results.map((reply) => (
+                <Reply
+                  key={reply.id}
+                  {...reply}
+                  comment={id}
+                  setComments={setComments}
+                  setReplies={setReplies}
+                />
+              ))}
+              dataLength={replies.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!replies.next}
+              next={() => fetchMoreData(replies, setReplies)}
+            />
+          )}
         </div>
         {is_owner && !showEditForm && (
           <MoreDropdown
@@ -117,32 +142,6 @@ function Comment(props) {
           />
         )}
       </div>
-      {showReplyForm && (
-        <ReplyCreateForm
-          setShowReplyForm={setShowReplyForm}
-          setReplies={setReplies}
-          comment={id}
-          setComments={setComments}
-        />
-      )}
-      {showReplies && (
-        <InfiniteScroll
-          children={replies.results.map((reply) => (
-            <Reply
-              key={reply.id}
-              {...reply}
-              comment={id}
-              setComments={setComments}
-              setReplies={setReplies}
-            />
-          ))}
-          dataLength={replies.results.length}
-          loader={<Asset spinner />}
-          hasMore={!!replies.next}
-          next={() => fetchMoreData(replies, setReplies)}
-        />
-      )}
-      <hr />
     </Card.Body>
   );
 }
