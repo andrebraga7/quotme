@@ -53,7 +53,7 @@ function Login() {
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
-        <Card body>
+        <Card className={styles.Container} body>
           <h1 className={styles.Header}>LOGIN</h1>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel

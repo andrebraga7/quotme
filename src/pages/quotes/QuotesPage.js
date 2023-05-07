@@ -106,6 +106,15 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
                   loader={<Asset spinner />}
                   hasMore={!!quotes.next}
                   next={() => fetchMoreData(quotes, setQuotes)}
+                  endMessage={
+                    <>
+                      <p>
+                        "Goodbye my lover. Goodbye my friend. You have been the
+                        one. You have been the one for me..."<br/>
+                        by <b>James Blunt</b>
+                      </p>
+                    </>
+                  }
                 />
               ) : (
                 <Container>

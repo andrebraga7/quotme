@@ -18,6 +18,7 @@ import UsernameForm from "./pages/profile/UsernameForm";
 import PasswordForm from "./pages/profile/PasswordForm";
 import AuthorPage from "./pages/authors/AuthorPage";
 import AuthorsPage from "./pages/authors/AuthorsPage";
+import NotFound from "./pages/404/NotFound";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -28,7 +29,7 @@ function App() {
       <NavBar />
       <Container fluid className={styles.Main}>
         <Routes>
-          <Route path="*" element={<p>Not Found.</p>} />
+          <Route path="*" element={<NotFound />} />
           <Route
             path="/"
             element={
