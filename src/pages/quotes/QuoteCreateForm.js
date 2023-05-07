@@ -70,7 +70,7 @@ function QuoteCreateForm() {
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
-        <Card body>
+        <Card className={styles.Container} body>
           <h1 className={styles.Header}>ADD QUOTE</h1>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel
