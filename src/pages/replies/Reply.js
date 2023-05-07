@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
+import ReplyEditForm from "./ReplyEditForm";
 
 // React Bootstrap imports
 import Card from "react-bootstrap/Card";
@@ -58,7 +59,16 @@ function Reply(props) {
         <div className="flex-grow-1 text-start">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
-          {showEditForm ? <p>edit comment form</p> : <p>{content}</p>}
+          {showEditForm ? (
+            <ReplyEditForm
+              id={id}
+              content={content}
+              setShowEditForm={setShowEditForm}
+              setReplies={setReplies}
+            />
+          ) : (
+            <p>{content}</p>
+          )}
         </div>
         {is_owner && !showEditForm && (
           <MoreDropdown
