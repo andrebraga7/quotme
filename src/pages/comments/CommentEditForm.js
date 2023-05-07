@@ -43,7 +43,7 @@ function CommentEditForm(props) {
     <Form onSubmit={handleSubmit}>
       <Form.Group className={styles.Group}>
         <Form.Control
-          className={styles.Input}
+          className={`${styles.Input} ${styles.NoPadding}`}
           as="textarea"
           rows={2}
           value={formContent}

@@ -113,7 +113,7 @@ function Quote(props) {
     <Card className={styles.Quote}>
       <Card.Body className={styles.QuoteHeader}>
         <Container className="d-flex align-items-center justify-content-between">
-          <Link className={styles.Link} to={`/profiles/${profile_id}`}>
+          <Link className={styles.Owner} to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
@@ -138,12 +138,12 @@ function Quote(props) {
           <Container className={styles.Content}>
             <h1>{content}</h1>
           </Container>
+          <Container className="text-end">
+            <i className="fa-solid fa-quote-right"></i>
+          </Container>
         </Link>
-        <Container className="text-end">
-          <i className="fa-solid fa-quote-right"></i>
-        </Container>
         <Link className={styles.Author} to={`/authors/${author_id}`}>
-          <Container>by {author}</Container>
+          <span>by {author}</span>
         </Link>
       </Card.Body>
 

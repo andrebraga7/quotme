@@ -1,7 +1,7 @@
 .CommentForm {
   border: 1px solid #d7d8db;
   border-radius: 15px;
-  margin-bottom: 1vh;
+  margin:0vh 1vh 1vh;
 }
 
 .Group {
@@ -10,10 +10,12 @@
 
 .Input {
   border: none;
-  padding: 0;
-  border-bottom: 2px solid #d7d8db;
+  padding: 1vh;
   border-radius: 0;
-  font-weight: 500;
+}
+
+.NoPadding {
+  padding: 0;
 }
 
 .Button {
