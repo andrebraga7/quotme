@@ -121,7 +121,10 @@ function Quote(props) {
             <span className={styles.QuoteInfo}>{category}</span>
             <span className={styles.QuoteInfo}>{updated_at}</span>
             {is_owner && quotePage && (
-              <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
             )}
           </div>
         </Container>
@@ -145,10 +148,12 @@ function Quote(props) {
       </Card.Body>
 
       <Card.Body className={styles.Footer}>
-        <span>
-          <i className="fa-regular fa-comment"></i>
-        </span>
-        {comments_count}
+        <Link to={`/quotes/${id}`}>
+          <span>
+            <i className="fa-regular fa-comment"></i>
+          </span>
+          {comments_count}
+        </Link>
         {is_owner ? (
           <OverlayTrigger
             placement="top"
