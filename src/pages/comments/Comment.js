@@ -69,7 +69,7 @@ function Comment(props) {
   }, [id, setComments]);
 
   return (
-    <Card.Body className={`${styles.CommentBody}`}>
+    <Card.Body>
       <div className="d-flex">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
@@ -85,17 +85,17 @@ function Comment(props) {
               setComments={setComments}
             />
           ) : (
-            <p>{content}</p>
+            <p className={styles.Content}>{content}</p>
           )}
-          <span className={styles.ReplyIcon}>
+          <span
+            className={styles.ReplyIcon}
+            onClick={() => setShowReplies((showReplies) => !showReplies)}
+          >
             <i className="fa-solid fa-reply"></i>
             {replies_count}
             {replies_count > 0 ? (
-              <span
-                className={styles.ViewReplies}
-                onClick={() => setShowReplies((showReplies) => !showReplies)}
-              >
-                View all replies
+              <span className={styles.ViewReplies}>
+                {showReplies ? "Hide replies" : "View all replies"}
               </span>
             ) : null}
           </span>
@@ -112,6 +112,7 @@ function Comment(props) {
           {showReplyForm && (
             <ReplyCreateForm
               setShowReplyForm={setShowReplyForm}
+              setShowReplies={setShowReplies}
               setReplies={setReplies}
               comment={id}
               setComments={setComments}
@@ -134,6 +135,7 @@ function Comment(props) {
               next={() => fetchMoreData(replies, setReplies)}
             />
           )}
+          <hr />
         </div>
         {is_owner && !showEditForm && (
           <MoreDropdown

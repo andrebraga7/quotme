@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 function ReplyCreateForm(props) {
-  const { comment, setReplies, setComments, setShowReplyForm } = props;
+  const { comment, setReplies, setComments, setShowReplyForm, setShowReplies } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -39,6 +39,7 @@ function ReplyCreateForm(props) {
         }),
       }));
       setShowReplyForm(false);
+      setShowReplies(true);
       setContent("");
     } catch (error) {
       console.log(error);

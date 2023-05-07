@@ -13,11 +13,11 @@
 }
 
 .CommentCard {
-  border: 1px solid #d7d8db;
-  border-radius: 3px;
+  border-radius: 15px;
   min-height: 10vh;
-  margin-bottom: 3vh;
-  padding-top: 24px;
+  margin-bottom: 7vh;
+  margin-top: 2vh;
+  padding: 16px;
 }
 
 @media screen and (min-width: 768px) {

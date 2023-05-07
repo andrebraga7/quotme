@@ -51,7 +51,7 @@ function Reply(props) {
   };
 
   return (
-    <Card.Body className={`${styles.CommentBody}`}>
+    <Card.Body className={`${styles.ReplyBody}`}>
       <div className="d-flex">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
