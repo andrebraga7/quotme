@@ -7,6 +7,7 @@
 .Header h1 {
   font-size: 1.5em;
   font-weight: 700;
+  color: #362113;
 }
 
 .Header p {
@@ -19,12 +20,12 @@
 }
 
 .SearchInput {
-  border-radius: 2px;
+  border-radius: 20px;
   border-left: none;
 }
 
 .SearchIcon {
-  border-radius: 2px;
+  border-radius: 20px;
   background-color: #ffffff;
 }
 

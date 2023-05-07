@@ -1,8 +1,10 @@
 .Quote {
-  border: 1px solid #d7d8db;
+  border: 1px dashed #362113;
   border-radius: 15px;
-  box-shadow: 0px 3px 7px #d7d8db;
-  margin-bottom: 5vh;
+  padding: 1em;
+  box-shadow: 0px 0px 7px #d7d8db;
+  margin:2vh 1vh 5vh;
+  background-color: f9f8f4;
 }
 
 .QuoteHeader {
@@ -23,10 +25,11 @@
   margin: 0 2vw;
   padding-top: 0;
   padding-bottom: 0;
+  color: #362113;
 }
 
 .QuoteBody i {
-  color: #eeeff2;
+  color: rgba(54, 33, 19, .4);
   font-size: 2em;
 }
 
@@ -44,6 +47,11 @@
 .Footer {
   font-size: 1.2em;
   padding-top: 0;
+  color: #02635d;
+}
+
+.Footer a:hover {
+  color: #362113;
 }
 
 .Footer i {
@@ -51,7 +59,7 @@
 }
 
 .Footer i:hover {
-  color: #2a71ca;
+  color: #362113;
 }
 
 @media screen and (min-width: 768px) {

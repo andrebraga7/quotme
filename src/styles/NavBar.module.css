@@ -5,22 +5,22 @@
 .NavBrand {
   font-size: 2em;
   font-weight: 800;
-  color: #222222;
+  color: #362113;
   text-decoration: none;
 }
 
 .NavBrand:hover {
-  color: #222222;
+  color: #362113;
 }
 
 .NavBarMobile {
   padding: 8px 0;
-  color: #222222;
+  color: #362113;
   text-decoration: none;
 }
 
 .NavBarMobile:hover {
-  color: #222222;
+  color: #362113;
   text-decoration: underline;
 }
 
@@ -29,17 +29,17 @@
 }
 
 .NavLink {
-  color: #222222;
+  color: #362113;
   text-decoration: none;
   padding: 8px;
 }
 
 .NavLink:hover {
-  color: #222222;
+  color: #362113;
 }
 
 .AddQuoteButton {
-  color: #222222;
+  color: #362113;
   border: 2px solid;
   border-radius: 20px;
   padding: 8px;
@@ -49,18 +49,18 @@
 
 .AddQuoteButton:hover {
   color: white;
-  background: #222222;
+  background: #362113;
   text-decoration: none;
-  border-color: #222222;
+  border-color: #362113;
 }
 
 .Active {
-  color: #222222;
+  color: #362113;
   padding: 8px 8px 6px 8px;
   text-decoration: none;
   border-bottom: 2px solid;
 }
 
 .Active:hover {
-  color: #222222;
+  color: #362113;
 }

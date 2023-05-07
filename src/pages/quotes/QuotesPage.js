@@ -75,7 +75,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
                   />
                 </InputGroup>
               </Col>
-              <Col md={4}>
+              <Col className="me-2" md={4}>
                 <Form.Select
                   className={styles.Category}
                   aria-label="Category"
