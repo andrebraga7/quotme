@@ -117,7 +117,9 @@ function Quote(props) {
             <Avatar src={profile_image} height={55} />
             <span>{owner}</span>
           </Link>
-          <div className={`d-flex pe-3 justify-content-end ${styles.InfoContainer}`}>
+          <div
+            className={`d-flex pe-3 justify-content-end ${styles.InfoContainer}`}
+          >
             <span className={styles.QuoteInfo}>{category}</span>
             <span className={styles.QuoteInfo}>{updated_at}</span>
             {is_owner && quotePage && (

@@ -108,9 +108,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
                   next={() => fetchMoreData(quotes, setQuotes)}
                   endMessage={
                     <>
-                      <p>
-                        "Is this the end?"
-                      </p>
+                      <p>"Is this the end?"</p>
                     </>
                   }
                 />
