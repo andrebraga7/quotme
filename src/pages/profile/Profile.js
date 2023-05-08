@@ -33,7 +33,7 @@ function Profile(props) {
       <Col className="mx-auto" sm={10} md={8} lg={6}>
         <Row className="align-items-center">
           <Col sm={12} md={5}>
-            <Image src={image} roundedCircle className={styles.Image} />
+            <Image src={image} className={styles.ProfileImage} roundedCircle />
           </Col>
           <Col className="text-sm-start">
             <span className={styles.Title}>{owner}</span>

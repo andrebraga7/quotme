@@ -3,7 +3,8 @@
   border-bottom: 1px solid #d7d8db;
 }
 
-.Image {
+.ProfileImage {
+  object-fit: cover;
   height: 50vw;
   width: 50vw;
   padding: 5px;
@@ -37,7 +38,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .Image {
+  .ProfileImage {
     height: 25vh;
     width: 25vh;
   }
