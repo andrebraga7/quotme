@@ -57,6 +57,17 @@ function App() {
           />
           <Route path="/authors" element={<AuthorsPage />} />
           <Route path="/authors/:id" element={<AuthorPage />} />
+          <Route
+            path="/saved"
+            element={
+              <QuotesPage
+                title="Saved Quotes"
+                subtitle="These are the quotes you saved!"
+                message="No results found. Adjust the search keyword or save a quote."
+                filter={`saved__owner__profile=${profile_id}&`}
+              />
+            }
+          />
           <Route path="/quotes/:id" element={<QuotePage />} />
           <Route path="/quotes/create" element={<QuoteCreateForm />} />
           <Route path="/quotes/:id/edit" element={<QuoteEditForm />} />
