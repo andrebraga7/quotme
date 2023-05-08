@@ -59,6 +59,16 @@ function NavBar() {
   const loggedInLinks = (
     <>
       <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.Active} d-none d-md-inline-block`
+            : `${styles.NavLink} d-none d-md-inline-block`
+        }
+        to="/saved"
+      >
+        Saved
+      </NavLink>
+      <NavLink
         to={location.pathname}
         onClick={handleLogout}
         className={styles.NavLink}
@@ -101,6 +111,26 @@ function NavBar() {
     >
       <i className="fa-regular fa-user"></i>
       <span>Profile</span>
+    </NavLink>
+  );
+
+  const savedIcon = (
+    <NavLink
+      className={`d-flex flex-column ${styles.NavBarMobile}`}
+      to="/saved"
+    >
+      <i className="fa-solid fa-bookmark"></i>
+      <span>Saved</span>
+    </NavLink>
+  );
+
+  const authorsIcon = (
+    <NavLink
+      className={`d-flex flex-column ${styles.NavBarMobile}`}
+      to="/authors"
+    >
+      <i className="fa-solid fa-pen-fancy"></i>
+      <span>Authors</span>
     </NavLink>
   );
 
@@ -148,8 +178,8 @@ function NavBar() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? `${styles.Active} d-none d-md-inline-block`
-                    : `${styles.NavLink} d-none d-md-inline-block`
+                    ? styles.Active
+                    : styles.NavLink
                 }
                 to="/authors"
               >
@@ -176,13 +206,7 @@ function NavBar() {
               <span>Discover</span>
             </NavLink>
             {currentUser && addQuoteIcon}
-            <NavLink
-              className={`d-flex flex-column ${styles.NavBarMobile}`}
-              to="/authors"
-            >
-              <i className="fa-solid fa-pen-fancy"></i>
-              <span>Authors</span>
-            </NavLink>
+            {currentUser ? savedIcon : authorsIcon}
             {currentUser && profileIcon}
           </Nav>
         </Container>

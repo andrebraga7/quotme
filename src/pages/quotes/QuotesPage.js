@@ -109,9 +109,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
                   endMessage={
                     <>
                       <p>
-                        "Goodbye my lover. Goodbye my friend. You have been the
-                        one. You have been the one for me..."<br/>
-                        by <b>James Blunt</b>
+                        "Is this the end?"
                       </p>
                     </>
                   }
