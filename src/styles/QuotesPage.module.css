@@ -19,19 +19,20 @@
   min-height: calc(90vh - 170px);
 }
 
+.SearchIcon {
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-bottom: 1vh;
+}
+
 .SearchInput {
   border-radius: 20px;
   border-left: none;
+  margin-bottom: 1vh;
 }
 
 .Category {
   border-radius: 20px;
-}
-
-.SearchIcon {
-  border-radius: 20px;
-  background-color: #ffffff;
-  margin-left: 1vh;
 }
 
 .Link {
@@ -42,5 +43,9 @@
 @media screen and (min-width: 768px) {
   .Row {
     min-height: calc(90vh - 102px);
+  }
+
+  .SearchIcon {
+    margin-left: 1vh;
   }
 }

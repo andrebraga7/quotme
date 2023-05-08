@@ -58,7 +58,7 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
         </Col>
       </Row>
       <Row className={styles.Row}>
-        <Col className="mx-auto mt-4" md={6}>
+        <Col className="mx-auto mt-4" md={8} lg={6}>
           <Form className="mb-4" onSubmit={(event) => event.preventDefault()}>
             <Row>
               <Col>

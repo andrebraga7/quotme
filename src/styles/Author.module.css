@@ -1,5 +1,5 @@
 .Content {
-  min-width: 90%;
+  width: 90vw;
   height: 100px;
   margin: 0.5em;
   background-color: #02635d;
@@ -18,6 +18,6 @@
 
 @media screen and (min-width: 768px) {
   .Content {
-    min-width: 25vw;
+    width: 25vw;
   }
 }

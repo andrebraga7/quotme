@@ -44,7 +44,7 @@ function QuotePage() {
 
   return (
     <Row className={styles.Row}>
-      <Col className="mx-auto mt-4" md={6}>
+      <Col className="mx-auto mt-4" md={8} lg={6}>
         {hasLoaded ? (
           <>
             <Quote {...quote.results[0]} setQuotes={setQuote} quotePage />

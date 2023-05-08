@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/QuoteCreateForm.module.css";
+import styles from "../../styles/QuoteCreateForm.module.css"
 import btnStyles from "../../styles/Button.module.css";
 import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { useNavigate, useParams } from "react-router-dom";
@@ -87,7 +87,7 @@ function QuoteEditForm() {
   return (
     <Row className={`${styles.Row} justify-content-center`}>
       <Col className="my-auto" md={6}>
-        <Card body>
+        <Card className={styles.Container} body>
           <h1 className={styles.Header}>EDIT QUOTE</h1>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel
@@ -123,8 +123,7 @@ function QuoteEditForm() {
               label="Quote"
             >
               <Form.Control
-                className={styles.Input}
-                style={{ height: "80px" }}
+                className={styles.QuoteInput}
                 as="textarea"
                 placeholder="Quote"
                 name="content"

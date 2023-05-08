@@ -4,7 +4,9 @@
 }
 
 .Image {
-  height: 25vh;
+  height: 50vw;
+  width: 50vw;
+  padding: 5px;
 }
 
 .Title {
@@ -32,4 +34,12 @@
   display: flex;
   flex-direction: column;
   min-width: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .Image {
+    height: 25vh;
+    width: 25vh;
+  }
+
 }

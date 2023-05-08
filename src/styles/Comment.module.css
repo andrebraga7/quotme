@@ -44,9 +44,9 @@
 }
 
 .ReplyBody {
-  padding: 8px 16px 0;
+  padding: 8px 3px 0 0;
   background-color: #f7f8fa;
-  margin: 1em;
+  margin: 1em 0 1em 0;
   border-radius: 15px;
   border: 1px solid #d7d8db;
   font-weight: 400;
@@ -55,4 +55,12 @@
 
 hr {
   color: #6e7377;
+}
+
+@media screen and (min-width: 768px) {
+  .ReplyBody {
+    padding: 8px 16px 0;
+    background-color: #f7f8fa;
+    margin: 1em;
+  }
 }

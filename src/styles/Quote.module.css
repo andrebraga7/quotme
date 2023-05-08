@@ -1,7 +1,6 @@
 .Quote {
   border: 1px dashed #362113;
   border-radius: 15px;
-  padding: 1em;
   box-shadow: 0px 2px 7px #d7d8db;
   margin:2vh 1vh 5vh;
 }
@@ -17,28 +16,30 @@
 
 .QuoteInfo {
   color: #6e7377;
-  padding: 0 10px;
+  padding: 0 5px;
+  font-size: 0.9em;
+}
+
+.InfoContainer {
+  min-width: 60vw;
 }
 
 .QuoteBody {
-  margin: 0 2vw;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 10px 0 0;
   color: #362113;
 }
 
 .QuoteBody i {
   color: rgba(54, 33, 19, .4);
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .Content {
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 .Author {
-  font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 700;
   position: relative;
   bottom: 4vh;
 }
@@ -65,4 +66,29 @@
   .QuoteBody {
     margin: 0 6vw;
   }
+
+  .Quote {
+    padding: 1em;
+  }
+
+  .QuoteInfo {
+    padding: 0 10px;
+  }
+
+  .InfoContainer {
+    min-width: 0%;
+  }
+
+  .QuoteBody {
+    margin: 0 2vw;
+  }
+
+  .QuoteBody {
+    padding-top: 0;
+  }
+  
+  .QuoteBody i {
+    font-size: 2em;
+  }
+
 }

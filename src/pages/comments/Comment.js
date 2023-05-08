@@ -69,7 +69,7 @@ function Comment(props) {
   }, [id, setComments]);
 
   return (
-    <Card.Body>
+    <Card.Body className="ps-0 pe-2">
       <div className="d-flex">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />

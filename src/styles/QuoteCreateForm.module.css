@@ -22,6 +22,11 @@
   border-radius: 2px;
 }
 
+.QuoteInput {
+  border-radius: 2px;
+  height: 25vh !important;
+}
+
 .AuthorList {
   z-index: 1;
   position: absolute;

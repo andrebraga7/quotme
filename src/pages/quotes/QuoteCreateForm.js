@@ -109,8 +109,7 @@ function QuoteCreateForm() {
               label="Quote"
             >
               <Form.Control
-                className={styles.Input}
-                style={{ height: "80px" }}
+                className={styles.QuoteInput}
                 as="textarea"
                 placeholder="Quote"
                 name="content"
