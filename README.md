@@ -21,7 +21,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Site Structure](#site-structure)
     - [Design Choices](#design-choices)  
 - [**Features**](#existing-features)
-    - [Home page](#)
+    - [Home page](#home)
     - [Discover](#)
     - [Authors](#)
     - [Quote](#)
@@ -188,13 +188,44 @@ All the project features are detailed and listed bellow:
 ### Home
 This is the main ladning page with a top navigation menu with link to all pages and subheadings explaining the website features.
 
-<details><summary><b>Home page</b></summary>
+<details><summary><b>Home page logged out</b></summary>
 
-![Home page]()
+![Home page](src/assets/readme/features/home.png)
 </details><br/>
 
+<details><summary><b>Home page logged in</b></summary>
 
+![Home page](src/assets/readme/features/home_logged_in.png)
+</details><br/>
 
+### Navigation
+The main navigation menu has a white background with the brand on the left and navigation link to the right, which are all dark brown. The visible links change depending if a user is looged in or not and the active link has bottom border:
+
+- If the user is logged out he can view: *home*, *discover*, *authors*, *login* and *sign up*.
+- If the user is logged in he can view: *home*, *discover*, *saved*, *logout* and *profile*.
+- The mobile version has the links appearing in icons with respective link names on thje bottom.
+
+<details><summary><b>Top menu logged out</b></summary>
+
+![Top menu](src/assets/readme/features/menu_logged_out.png)
+</details><br/>
+
+<details><summary><b>Top menu logged in</b></summary>
+
+![Top menu](src/assets/readme/features/menu_logged_in.png)
+</details><br/>
+
+<details><summary><b>Mobile menu logged out</b></summary>
+
+![Top menu](src/assets/readme/features/menu_mobile_logged_out.png)
+</details><br/>
+
+<details><summary><b>Mobile menu logged in</b></summary>
+
+![Top menu](src/assets/readme/features/menu_mobile_logged_in.png)
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
