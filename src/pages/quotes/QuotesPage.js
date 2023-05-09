@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/QuotesPage.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import Quote from "./Quote";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // React Bootstrap imports
@@ -14,6 +15,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
 
 function QuotesPage({ title, subtitle, message, filter = "" }) {
   // useState definitions
@@ -113,8 +115,25 @@ function QuotesPage({ title, subtitle, message, filter = "" }) {
                   }
                 />
               ) : (
-                <Container>
-                  <p>{message}</p>
+                <Container className="mt-5">
+                  <h5>
+                    <p>{message}</p>
+                  </h5>
+                  {pathname !== "/discover" && (
+                    <>
+                      <p>
+                        Head over to the Discover page to see some awsome quotes
+                        from the community!
+                      </p>
+                      <Link to="/discover">
+                        <Button
+                          className={`${btnStyles.Button} ${btnStyles.Dark}`}
+                        >
+                          Go to Discover
+                        </Button>
+                      </Link>
+                    </>
+                  )}
                 </Container>
               )}
             </>
