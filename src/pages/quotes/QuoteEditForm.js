@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/QuoteCreateForm.module.css"
+import styles from "../../styles/QuoteCreateForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
+import { handleValidate } from "../../utils/handleValidate";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -26,6 +27,7 @@ function QuoteEditForm() {
   const [errors, setErrors] = useState({});
   const [authors, setAuthors] = useState([]);
   const [showAuthors, setShowAuthors] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   // Variables
   const { category, author, content } = quoteData;
@@ -89,7 +91,13 @@ function QuoteEditForm() {
       <Col className="my-auto" md={6}>
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>EDIT QUOTE</h1>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            onSubmit={(event) =>
+              handleValidate(event, handleSubmit, setValidated)
+            }
+            noValidate
+            validated={validated}
+          >
             <FloatingLabel
               className={styles.Group}
               controlId="floatingCategory"
@@ -101,6 +109,7 @@ function QuoteEditForm() {
                 name="category"
                 value={category}
                 onChange={handleChange}
+                required
               >
                 <option>Please select a category</option>
                 <option value="books">Books</option>
@@ -129,6 +138,8 @@ function QuoteEditForm() {
                 name="content"
                 value={content}
                 onChange={handleChange}
+                maxLength="255"
+                required
               />
             </FloatingLabel>
             {errors.content?.map((message, index) => (
@@ -151,6 +162,8 @@ function QuoteEditForm() {
                 value={author}
                 onChange={handleChange}
                 onBlur={() => setShowAuthors(false)}
+                maxLength="32"
+                required
               />
 
               {showAuthors &&
