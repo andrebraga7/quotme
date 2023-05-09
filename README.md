@@ -34,6 +34,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Profile](#profile-page)
     - [Sign up](#sign-up-page)
     - [Login](#login-page)
+    - [404 - Not found]()    
 - [**Future Features**](#future-features)
 - [**Technologies Used**](#technologies-used)
     - [Languages](#languages)
@@ -354,6 +355,17 @@ The loggin page has a form with username and password inputs. If the information
 <details><summary><b>Login</b></summary>
 
 ![Login](src/assets/readme/features/login.png)
+</details><br/>
+
+[Back to top](#table-of-content)
+
+## 404 - Not found
+
+The page that is displayed when the router cannot find the requested url or page.
+
+<details><summary><b>404 - Not found</b></summary>
+
+![404 - Not found](src/assets/readme/features/404.png)
 </details><br/>
 
 [Back to top](#table-of-content)
