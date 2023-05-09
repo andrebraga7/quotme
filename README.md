@@ -28,6 +28,8 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Discover](#discover-page)
     - [Authors](#authors-page)
     - [Quote](#quote-page)
+        - [*Comment*](#home-page)
+        - [*Reply*](#home-feed)
     - [Saved](#saved-page)
     - [Profile](#profile-page)
     - [Sign up](#)
@@ -263,6 +265,24 @@ In the quote page the user can view specific details of a selected quotes like: 
 <details><summary><b>Quote page</b></summary>
 
 ![Quote](src/assets/readme/features/quote.png)
+</details><br/>
+
+### Comment
+
+The comment component is where the user can view all comments made for the quote. In order to leave a comment the user must be logged in. If the user is the owner he can edit or delete the comment.
+
+<details><summary><b>Comment</b></summary>
+
+![Comment](src/assets/readme/features/comment.png)
+</details><br/>
+
+### Reply
+
+The reply component allows the user to reply to a single comment. Any replies will appear underneath the comment in an indent style. On the bottom of the comment the user can view the number of replies a comment has and if authenticated can click the *reply* button to leave a reply. If the user is the owner he can edit or delete the reply.
+
+<details><summary><b>Reply</b></summary>
+
+![Reply](src/assets/readme/features/reply.png)
 </details><br/>
 
 [Back to top](#table-of-content)
