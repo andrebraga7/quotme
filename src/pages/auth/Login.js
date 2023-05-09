@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
 import { useRedirect } from "../../hooks/useRedirect";
-import { useValidation } from "../../hooks/useValidation";
+import { handleValidate } from "../../utils/handleValidate";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -28,11 +28,11 @@ function Login() {
   });
 
   const [errors, setErrors] = useState({});
+  const [validated, setValidated] = useState(false);
 
   // Variables definitions
   const { username, password } = logInData;
   const navigate = useNavigate();
-  const { validated } = useValidation();
 
   // Event handlers
   const handleChange = (event) => {
@@ -60,7 +60,9 @@ function Login() {
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>LOGIN</h1>
           <Form
-            onSubmit={useValidation(handleSubmit)}
+            onSubmit={(event) =>
+              handleValidate(event, handleSubmit, setValidated)
+            }
             noValidate
             validated={validated}
           >

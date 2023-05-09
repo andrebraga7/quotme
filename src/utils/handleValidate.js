@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export const useValidation = (event, handleSubmit) => {
-  const [validated, setValidated] = useState(false);
-
+export const handleValidate = (event, handleSubmit, setValidated) => {
   event.preventDefault();
   const form = event.currentTarget;
   if (form.checkValidity() === false) {
@@ -11,6 +7,4 @@ export const useValidation = (event, handleSubmit) => {
   } else {
     handleSubmit(event);
   }
-
-  return { validated };
 };
