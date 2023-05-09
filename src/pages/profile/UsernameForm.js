@@ -68,6 +68,8 @@ function UsernameForm() {
                 name="username"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
+                pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9_@]{5,15}$"
+                required
               />
             </FloatingLabel>
             {errors.username?.map((message, index) => (

@@ -132,6 +132,7 @@ function ProfileEditForm() {
                     name="name"
                     value={name}
                     onChange={handleChange}
+                    maxLength="35"
                   />
                 </FloatingLabel>
                 {errors?.name?.map((message, index) => (
@@ -153,6 +154,7 @@ function ProfileEditForm() {
                     name="bio"
                     value={bio}
                     onChange={handleChange}
+                    maxLength="255"
                   />
                 </FloatingLabel>
                 {errors?.bio?.map((message, index) => (
