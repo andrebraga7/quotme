@@ -281,6 +281,31 @@ The saved page is only available for authenticated users and it filters all quot
 ## Profile page
 
 The profile page is where the user can view all profile related information, like: profile picture, quotes count, followers count, following count and all quotes created by the user. If the user is the owner of the profile and is logged he, it will display a dropdown menu with the edit and delete options.
+- If the user is authenticated and doesn't follow the profile, the follow button is visisble;
+- If the user is authenticated but already follows the profile, then the unfollow button is visible;
+- The user is not able to follow his own profile.
+
+<details><summary><b>Owner profile page</b></summary>
+
+![Profile page](src/assets/readme/features/profile_logged_in.png)
+</details><br/>
+
+<details><summary><b>Profile edit page</b></summary>
+
+![Profile page](src/assets/readme/features/profile_edit.png)
+</details><br/>
+
+<details><summary><b>User profile page</b></summary>
+
+![Profile page](src/assets/readme/features/profile_user.png)
+</details><br/>
+
+<details><summary><b>Unfollow profile</b></summary>
+
+![Unfollow](src/assets/readme/features/profile_unfollow.png)
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
