@@ -48,6 +48,7 @@ function CommentEditForm(props) {
           rows={2}
           value={formContent}
           onChange={handleChange}
+          maxLength="255"
         />
       </Form.Group>
       <div className="text-end">
