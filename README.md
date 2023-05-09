@@ -18,8 +18,8 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
 - [**User Experience (UX)**](#user-experience-ux)
     - [Wireframes](#wireframes)
     - [User Stories](#user-stories)
-    - [Site Structure](#)
-    - [Design Choices](#)    
+    - [Site Structure](#site-structure)
+    - [Design Choices](#design-choices)    
 
 
 
@@ -81,11 +81,15 @@ The first step for this project was to write all the epics and user stories. The
 | As a user I can stay logged in until I decide to logout so that I can have a good user experience. | &check; |
 | As a logged out user I can view the signup and login options so that I can signup or login. | &check; |
 
+[Back to top](#table-of-content)
+
 ### Create a quote
 |   |   |
 |--------|--------|
 | As a user I can add a quote so that I can share it with the community. | &check; |
 | As a user I can start typing an author of a quote so that It automatically loads available authors. | &check; |
+
+[Back to top](#table-of-content)
 
 ### Interact with quotes
 |   |   |
@@ -94,6 +98,8 @@ The first step for this project was to write all the epics and user stories. The
 | As a user I can like a quote so that I can show my interest in a quote. | &check; |
 | As a user I can save a quote so that I can view it in my saved quotes. | &check; |
 
+[Back to top](#table-of-content)
+
 ### Discover page
 |   |   |
 |--------|--------|
@@ -101,11 +107,15 @@ The first step for this project was to write all the epics and user stories. The
 | As a user I can view quotes by categories so that I can view only what interests me. | &check; |
 | As a user I can search for a quotes by keywords so that I can view what interest me. | &check; |
 
+[Back to top](#table-of-content)
+
 ### Authors page
 |   |   |
 |--------|--------|
 | As a user I can view the most popular authors so that I can view their quotes. | &check; |
 | As a user I can view an authors page so that I can view all quotes related to that author.  | &check; |
+
+[Back to top](#table-of-content)
 
 ### Quote page
 |   |   |
@@ -122,6 +132,8 @@ The first step for this project was to write all the epics and user stories. The
 | As a logged in user I can edit a reply so that I can update the content. | &check; |
 | As a logged in user I can delete a reply so that I can remove it from a comment. | &check; |
 
+[Back to top](#table-of-content)
+
 ### Profile page
 |   |   |
 |--------|--------|
@@ -132,9 +144,31 @@ The first step for this project was to write all the epics and user stories. The
 | As a logged in user I can edit my profile so that I can update my bio or profile image. | &check; |
 | As a logged in user I can change my username and password so that I can change my display name and keep my account safe. | &check; |
 
+[Back to top](#table-of-content)
 
+## Site Structure
+Quotme is divided into five distinct parts: **home page, discover, authors, quote, saved, profile and authentication**. When the page first loads and the user is logged out it takes the user to the logged out home page where it displays some headers with explanations of the webstie's features. The discover page show the user all quotes from the community. In the authors page the user can see the top ten most popular authors, ranked by number of quotes. When the user click on an authors it loads the author's page with all quotes available for that author. The quote page displays a single quote with available comments and replies underneath. In order to comment or reply to a comment the user must first login. The saved page is only displayed to logged in users, there, the user can view all quotes that are marked as saved. In the profile page, if it's the users profile, it will show the edit button with options to edit and change the profile picture. If it's another user's profile, the user can view all quotes created by that user along with: total number os quotes, followers and following. If the user is authenticated it is possible to follow or unfollow a profile. The las two pages are the authentication: sign up and login. If the user is already logged in he won't be able to visualize the login and sign up links/pages.
 
+You can see all features in detail in the [Features](<#features>) section.
 
+[Back to top](#table-of-content)
+
+## Design Choices
+
+- ### Color Scheme
+Quotme is built on a minimalist design choice, so the color palette selected for this project reflects this intention. The colors where selected with the idead of linking the page with a library or book of quotes. So the colors have a beige or dark brown tone to them. To complement the scheme I choose a shade of aqua that compliments the other choices.
+
+![Color](src/assets//readme//color_palette.png)
+
+- ### Typography
+The font used for this project was the Libre Franklin designed by Impallari Type.
+
+- This font goes well with the design principles of relating to a book but at the same time offering good readability and aesthetics.
+- Fallback font: Sans serif.
+
+To find out more about this font, please visit the [Google Fonts website](https://fonts.google.com/specimen/Libre+Franklin).
+
+[Back to top](#table-of-content)
 
 
 
@@ -200,77 +234,10 @@ The first step for this project was to write all the epics and user stories. The
 
 
 
-# **User Experience (UX)**
 
 
-### Manager site user
-|   |   |   |
-|--------|--------|--------|
-| As a Manager | I can access the managers dashboard so I can view new, active, and completed jobs. | &check; |
-| As a Manager | I can create, update and delete users so I can manage access and permissions. | &check; |
-| As a Manager | I can assign jobs to employees so I can plan what each employee will work on. | &check; |
-| As a Manager | I can mark jobs as complete so I can review any feedback before closing the job. | &check; |
-| As a Manager | I can approve job deletion request so I can verify the actual necessity of the job. | &check; |
-| As a Manager | I can reopen jobs so that I can move them from the completed to the active jobs list. | &check; |
-| As a Manager | I can reassign a job so that I can assign it to a different employee. | &check; |
 
-[Back to top](#table-of-content)
 
-### Client site user
-|   |   |   |
-|--------|--------|--------|
-| As a Client | I can view the home page with a menu so I can navigate to different pages. | &check; |
-| As a Client | I can access the dashboard so I can view new, active and completed jobs information. | &check; |
-| As a Client | I can add a new job so I can communicate the relevant maintenance needs. | &check; |
-| As a Client | I can edit a job so I can update relevant information for that job. | &check; |
-| As a Client | I can request that a job be deleted so I can remove it from the active list. | &check; |
-| As a Client | I can send a message so I can communicate with the company.| &check; |
-| As a Client | I can add / edit categories so that I can organize equipments in them. | &check; |
-| As a Client | I can add an equipment so that I can create a job for it. | &check; |
-| As a Client | I can edit / delete and equipment so that I can organize the equipment list. | &check; |
-| As a User | I can filter the jobs so that I can search for the relevant ones. | &check; |
-
-[Back to top](#table-of-content)
-
-### Employee site user
-|   |   |   |
-|--------|--------|--------|
-| As an Employee | I can access the employee dashboard so I can view jobs that have been assigned to me. | &check; |
-| As an Employee | I can add feedback to jobs so I can communicate any extra needs. | &check; |
-| As an Employee | I can mark jobs as done so I they can be moved to the completed list. | &check; |
-
-[Back to top](#table-of-content)
-
-## Site Structure
-TheMaintenanceCo is divided in four parts: **home page, manager dashboard, client dashboard and employee dashboard**. When a user logs in it check the user type and redirect the user to the correct dashbaord. All views have relevant permissions so user cannot access a page that is not allowed by their user type, if they try to access something outside of the user permission it will redirect them to a 404 page not found.
-The home page has a basic structure with a landing, about, contact and login page or logout if the user is already loggedin.
-In the manager dashboard the user can view, edit and delete all jobs, add, edit and delete users. For this project the manager has to approve the user signup in order for it to become active and grant the user access to the dashboard. This is because of the way the company's bussiness model works. The logic is that after a user signs all relevant contracts and paperworks he them receives access to the dashboard.
-In the client dashboard the user can view, edit and delete only jobs from his username. The user can also add, edit and delete categories and equipments. There is also a message page where the client can send an email and some fields are prepopuplated with user data.
-In the employee dashboard the user can view all jobs that have been assigned to him, add feedback and mark jobs as done.
-
-You can see all features in detail in the [Features](<#features>) section.
-
-[Back to top](#table-of-content)
-
-## Design Choices
-
-- ### Color Scheme
-TheMaintenanceCo is built on minimalist design choice, so the color palette select for this project reflects this intention. All caolors are mainly monochromatic shades of black and grey and only the buttons and some link have either a True Blue or Dodger Blue.
-
-![Color](readme/assets/images/colors.png)
-
-- ### Typography
-The fonts used for the site are the standard Bootstrap 5 native fonts stack. This system selects the best user firendly font depending on the os the user is using:
-
-- Safari for macOS and iOS: -apple-system;
-- Windows: Segoe UI;
-- Android: Roboto;
-- Linux: Noto Sans, Liberation Sans;
-- Fallback fonts: Helvetica Neue, Arial and Sans serif.
-
-To find out more about these Bootstrap option please read the documentation [here](https://getbootstrap.com/docs/5.0/content/reboot/#native-font-stack).
-
-[Back to top](#table-of-content)
 
 # **Features**
 All the project features are detailed and listed bellow:
