@@ -35,6 +35,10 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Sign up](#sign-up-page)
     - [Login](#login-page)
 - [**Future Features**](#future-features)
+- [**Technologies Used**](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks & Software](#frameworks--software)
+    - [Libraries](#libraries)
 
 
 
@@ -359,6 +363,45 @@ The loggin page has a form with username and password inputs. If the information
 
 [Back to top](#table-of-content)
 
+ # **Technologies used**
+
+ ## Languages
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+- [JavaScript ES6](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
+
+[Back to top](#table-of-content)
+
+## Frameworks & Software
+- [React](https://react.dev/) - A front end framework. React lets you build user interfaces out of individual pieces called components;
+- [React-Bootstrap](https://react-bootstrap.github.io/) - A CSS framework that helps building solid, responsive, mobile-first sites;
+- [Balsamiq](https://balsamiq.com/) - Used to create the wireframe;
+- [Github](https://github.com/) - Used to host and edit the website;
+- [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository;
+- [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in gitpod;
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to;
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site;
+- [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check;
+- [Real Favicon Generator](https://realfavicongenerator.net/) - Used to create the favicon;
+- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness;
+- [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project;
+- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code;
+- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code;
+- [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code.
+
+[Back to top](#table-of-content)
+
+## Libraries
+
+In the list below are all the libraries used in the project, these are located in *package.json*:
+
+- [axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js;
+- [jwt-decode](https://github.com/auth0/jwt-decode#readme) - jwt-decode is a small browser library that helps decoding JWTs token which are Base64Url encoded;
+- [react-infinite-scroll-component](https://github.com/ankeetmaini/react-infinite-scroll-component#readme) - An infinite-scroll that actually works and super-simple to integrate!;
+- [react-router-dom](https://reactrouter.com/en/main) - React Router is a lightweight, fully-featured routing library for the React JavaScript library.
+
+[Back to top](#table-of-content)
 
 
 
@@ -368,15 +411,6 @@ The loggin page has a form with username and password inputs. If the information
 
 
 
-
-
-
-- [**Future Features**](#future-features)
-
-- [**Technologies Used**](#technologies-used)
-    - [Languages](#languages)
-    - [Frameworks & Software](#frameworks--software)
-    - [Libraries](#libraries)
 
 - [**Testing**](#testing)
 
@@ -397,47 +431,8 @@ The loggin page has a form with username and password inputs. If the information
 
 
 
-# **Future Features**
 
-- Add an urgency status option to jobs;
-- Add an internal messaging page;
-- Add a password reset page with email confirmation;
-- Add more automated testing;
 
-[Back to top](#table-of-content)
-
- # **Technologies used**
-
- ## Languages
-
-- [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
-- [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
-
-[Back to top](#table-of-content)
-
-## Frameworks & Software
-- [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites
-- [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
-- [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
-- [Numbers](https://www.apple.com/uk/numbers/) - Used to create ERD models.
-- [Github](https://github.com/) - Used to host and edit the website.
-- [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
-- [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
-- [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check.
-- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Used to validate the sites accessibility.
-- [a11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - Used to test color contrast on the site
-- [Real Favicon Generator](https://realfavicongenerator.net/) - Used to create the favicon.
-- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
-- [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
-- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
-- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
-- [PEP8 Validation](http://pep8online.com/) - At the time for deploying this project the PEP8 Online Validaton service was offline, therefore not used.
-- [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
-
-[Back to top](#table-of-content)
 
 ## Libraries
 
