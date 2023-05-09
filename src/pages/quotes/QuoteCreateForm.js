@@ -4,6 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { useNavigate } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
+import { handleValidate } from "../../utils/handleValidate";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -27,6 +28,7 @@ function QuoteCreateForm() {
   const [errors, setErrors] = useState({});
   const [authors, setAuthors] = useState([]);
   const [showAuthors, setShowAuthors] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   // Variables
   const { category, author, content } = quoteData;
@@ -75,7 +77,13 @@ function QuoteCreateForm() {
       <Col className="my-auto" md={6}>
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>ADD QUOTE</h1>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            onSubmit={(event) =>
+              handleValidate(event, handleSubmit, setValidated)
+            }
+            noValidate
+            validated={validated}
+          >
             <FloatingLabel
               className={styles.Group}
               controlId="floatingCategory"
@@ -87,6 +95,7 @@ function QuoteCreateForm() {
                 name="category"
                 value={category}
                 onChange={handleChange}
+                required
               >
                 <option>Please select a category</option>
                 <option value="books">Books</option>
@@ -115,6 +124,8 @@ function QuoteCreateForm() {
                 name="content"
                 value={content}
                 onChange={handleChange}
+                maxLength="255"
+                required
               />
             </FloatingLabel>
             {errors.content?.map((message, index) => (
@@ -137,6 +148,8 @@ function QuoteCreateForm() {
                 value={author}
                 onChange={handleChange}
                 onBlur={() => setShowAuthors(false)}
+                maxLength="32"
+                required
               />
 
               {showAuthors &&
