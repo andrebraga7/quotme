@@ -21,7 +21,10 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Site Structure](#site-structure)
     - [Design Choices](#design-choices)  
 - [**Features**](#existing-features)
-    - [Home page](#home)
+    - [Home](#home)
+        - [*Home page*](#home-page)
+        - [*Home feed*](#home-feed)
+        - [*Navigation*](#navigation)
     - [Discover](#)
     - [Authors](#)
     - [Quote](#)
@@ -186,14 +189,17 @@ All the project features are detailed and listed bellow:
 ## Home page
 
 ### Home
-This is the main ladning page with a top navigation menu with link to all pages and subheadings explaining the website features.
+This is the main landing page with a top navigation menu with link to all pages and subheadings explaining the website features.
 
 <details><summary><b>Home page logged out</b></summary>
 
 ![Home page](src/assets/readme/features/home.png)
 </details><br/>
 
-<details><summary><b>Home page logged in</b></summary>
+### Home Feed
+When the user is authenticated, the home page displays the home feed which shows the user all quotes from followed users only.
+
+<details><summary><b>Home feed logged in</b></summary>
 
 ![Home page](src/assets/readme/features/home_logged_in.png)
 </details><br/>
@@ -227,7 +233,28 @@ The main navigation menu has a white background with the brand on the left and n
 
 [Back to top](#table-of-content)
 
+## Discover page
 
+On the discover page the user can view all quotes from the community even when logged out. The page has a search bar and category selection at the top which filters the quotes by the selected keywords. The page has an infinite scroll feature that automatically loads more quotes as the user scrolls to offer a better user experience.
+
+<details><summary><b>Discover
+ page</b></summary>
+
+![Discover](src/assets/readme/features/discover.png)
+</details><br/>
+
+[Back to top](#table-of-content)
+
+## Authors page
+
+The authors page shows the user the top ten authors with most amount of quote count. The user can select an author and it will take him to the author page where the user can view all related quotes with that author. The page has the same functionality with a search bar an category filter.
+
+<details><summary><b>Author page</b></summary>
+
+![Discover](src/assets/readme/features/authors.png)
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
