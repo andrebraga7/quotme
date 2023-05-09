@@ -4,6 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
+import { handleValidate } from "../../utils/handleValidate";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -25,6 +26,7 @@ function SignUp() {
   });
 
   const [errors, setErrors] = useState({});
+  const [validated, setValidated] = useState(false);
 
   // Variables definitions
   const { username, password1, password2 } = signUpData;
@@ -53,7 +55,13 @@ function SignUp() {
       <Col className="my-auto" md={6}>
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>SIGN UP</h1>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            onSubmit={(event) =>
+              handleValidate(event, handleSubmit, setValidated)
+            }
+            noValidate
+            validated={validated}
+          >
             <FloatingLabel
               className={styles.Group}
               controlId="floatingUsername"
@@ -66,9 +74,14 @@ function SignUp() {
                 name="username"
                 value={username}
                 onChange={handleChange}
-                pattern="^[a-zA-Z0-9@]{5,}$"
+                pattern="^(?=.*[a-zA-Z])[a-zA-Z0-9_@]{5,15}$"
                 required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid username. Must contain at least one
+                letters and can contain numbers _ or @. Between 5 and 15
+                characters long.
+              </Form.Control.Feedback>
             </FloatingLabel>
             {errors.username?.map((message, index) => (
               <Alert variant="warning" key={index}>
@@ -87,7 +100,11 @@ function SignUp() {
                 name="password1"
                 value={password1}
                 onChange={handleChange}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid password
+              </Form.Control.Feedback>
             </FloatingLabel>
             {errors.password1?.map((message, index) => (
               <Alert variant="warning" key={index}>
@@ -106,7 +123,11 @@ function SignUp() {
                 name="password2"
                 value={password2}
                 onChange={handleChange}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid password
+              </Form.Control.Feedback>
             </FloatingLabel>
             {errors.password2?.map((message, index) => (
               <Alert variant="warning" key={index}>
@@ -127,7 +148,10 @@ function SignUp() {
           </Form>
         </Card>
         <p className="mt-3">
-          Already have an account? <Link className={styles.Link} to="/login">Login here</Link>
+          Already have an account?{" "}
+          <Link className={styles.Link} to="/login">
+            Login here
+          </Link>
         </p>
       </Col>
     </Row>
