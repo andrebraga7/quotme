@@ -27,6 +27,7 @@ function Login() {
   });
 
   const [errors, setErrors] = useState({});
+  const [validated, setValidated] = useState(false);
 
   // Variables definitions
   const { username, password } = logInData;
@@ -38,6 +39,17 @@ function Login() {
       ...logInData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleValidation = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      setValidated(true);
+      return;
+    } else {
+      handleSubmit(event);
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -57,7 +69,7 @@ function Login() {
       <Col className="my-auto" md={6}>
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>LOGIN</h1>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleValidation} noValidate validated={validated}>
             <FloatingLabel
               className={styles.Group}
               controlId="floatingUsername"
@@ -70,7 +82,11 @@ function Login() {
                 name="username"
                 value={username}
                 onChange={handleChange}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid username
+              </Form.Control.Feedback>
             </FloatingLabel>
             {errors.username?.map((message, index) => (
               <Alert variant="warning" key={index}>
@@ -89,7 +105,11 @@ function Login() {
                 name="password"
                 value={password}
                 onChange={handleChange}
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid password
+              </Form.Control.Feedback>
             </FloatingLabel>
             {errors.password?.map((message, index) => (
               <Alert variant="warning" key={index}>

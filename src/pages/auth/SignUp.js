@@ -66,6 +66,8 @@ function SignUp() {
                 name="username"
                 value={username}
                 onChange={handleChange}
+                pattern="^[a-zA-Z0-9@]{5,}$"
+                required
               />
             </FloatingLabel>
             {errors.username?.map((message, index) => (
