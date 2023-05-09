@@ -60,6 +60,7 @@ function CommentCreateForm(props) {
               name="content"
               value={content}
               onChange={handleChange}
+              maxLength="255"
             />
           </InputGroup>
         </Form.Group>
