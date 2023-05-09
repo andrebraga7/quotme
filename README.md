@@ -15,6 +15,11 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Site Users Goal](#site-users-goal)
     - [Site Owners Goal](#site-owners-goal)
     - [Project Management](#project-management)
+- [**User Experience (UX)**](#user-experience-ux)
+    - [Wireframes](#wireframes)
+    - [User Stories](#)
+    - [Site Structure](#)
+    - [Design Choices](#)    
 
 
 
@@ -40,10 +45,28 @@ In order to keep everything organized I used Github's built in project board to 
 ![Iterations](src/assets/readme/milestones.png)
 </details><br/>
 
+### Django-REST API Backend
+In order to develop this project I first developed the API backend using Django-REST Framework. More information and details of the API can be found in the [Quotme-api repository](https://github.com/andrebraga7/quotme-api)
+
 [Back to top](#table-of-content)
 
+# **User Experience (UX)**
 
+## Wireframes
+ All the project's wireframes were created using [Balsamiq](https://balsamiq.com). They were created with mobile first design mentality and also optimized for larger desktop screens. There are some slight differences to the final project as some design choices where changed during the development process in order to provide a better user experience.
 
+<details><summary><b>Wireframes</b></summary>
+
+![Wireframes1](src/assets/readme/wireframes/Home.png)
+![Wireframes1](src/assets/readme/wireframes/Discover.png)
+![Wireframes1](src/assets/readme/wireframes/Profile.png)
+![Wireframes1](src/assets/readme/wireframes/Add.png)
+![Wireframes1](src/assets/readme/wireframes/Home_desktop.png)
+![Wireframes1](src/assets/readme/wireframes/Home_desktop_Logged_in.png)
+
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
@@ -114,45 +137,15 @@ In order to keep everything organized I used Github's built in project board to 
 
 
 
-<details><summary><b>Github's project management board</b></summary>
 
-![User Stories](readme/assets/images/project_board.png)
-</details><br/>
 
-[Back to top](#table-of-content)
 
-### Database Schema
-I wrote down the different models and fields I would need for the project in a numbers spreadsheet. It helped me go throught the logic of the different models and their relationship to one another.
 
-I created the following models for the project:
 
-- **Profile (user profile)** - A model created to store additional user information and is linked to the default user model from allauth.
-- **Category** - Stores all the client created categories of equipments in the restaurant. It is a foreign key to the equipments model.
-- **Equipment** - Stores all the different types of equipments in the store, it takes the category and user models as foreign key's.
-- **Job** - This models stores all data relevant to the job a user created and has the user, category, equipment as foreign keys's.
-
-<details><summary><b>Database ERD (Entity Relationship Diagram)</b></summary>
-
-![Database ERD](readme/assets/images/erd.png)
-</details><br/>
-
-[Back to top](#table-of-content)
 
 # **User Experience (UX)**
 
-## Wireframes
-A created all the initial wireframes using [Balsamiq](https://balsamiq.com). They were created with a desktop and responsive mobile options. There are some slight differences to the final project as some design choices where changed during the development process to pressent a better user experience.
 
-<details><summary><b>Wireframes</b></summary>
-
-![Wireframes1](readme/assets/images/dashboard.png)
-![Wireframes2](readme/assets/images/home_page_wire.png)
-![Wireframes3](readme/assets/images/mobile_add_job.png)
-![Wireframes4](readme/assets/images/mobile_dashboard.png)
-
-</details><br/>
-
-[Back to top](#table-of-content)
 
 ## User Stories
 This first step for this project was to write the user stories. They were used to guide the development and were divided in three user types: manager, client an employee. In the [testing](#testing) section I evaluate the outcome of each.
