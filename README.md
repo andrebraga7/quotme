@@ -39,9 +39,13 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Languages](#languages)
     - [Frameworks & Software](#frameworks--software)
     - [Libraries](#libraries)
-
-
-
+- [**Testing**](#testing)
+- [**Deployment**](#deployment)
+    - [Deployment to Heroku](#deployment-to-heroku)
+    - [To Fork the Repository](#how-to-fork-the-repository-on-github)
+    - [Cloning The Project](#cloning-the-project)
+- [**Credits**](#credits)
+- [**Acknowledgements**]()
 
 # **Project**
 
@@ -403,62 +407,9 @@ In the list below are all the libraries used in the project, these are located i
 
 [Back to top](#table-of-content)
 
-
-
-
-
-
-
-
-
-
-- [**Testing**](#testing)
-
-- [**Deployment**](#deployment)
-    - [Deployment to Heroku](#deployment-to-heroku)
-    - [To Fork the Repository](#how-to-fork-the-repository-on-github)
-    - [Cloning The Project](#cloning-the-project)
-
-- [**Credits**](#credits)
-
-- [**Acknowledgements**]()
-
-
-
-
-
-
-
-
-
-
-
-
-## Libraries
-
-In the list below are all the libraries used in the project, these are located in *requirements.txt*:
-
-- [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI;
-- [cloudinary](https://pypi.org/project/cloudinary/) - The Cloudinary Python SDK allows you to quickly and easily integrate your application with Cloudinary. Effortlessly optimize, transform, upload and manage your cloud's assets;
-- [crispy-bootstrap5](https://pypi.org/project/crispy-bootstrap5/) - Bootstrap 5 template pack for django crispy forms;
-- [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/) - Django Cloudinary Storage is a Django package that facilitates integration with Cloudinary by implementing Django Storage API.
-- [Django](https://pypi.org/project/Django/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
-- [django-allauth](https://pypi.org/project/django-allauth/) - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
-- [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - Used to integrate Django DRY forms in the project.
-- [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
-- [oauthlib](https://pypi.org/project/oauthlib/) - OAuthLib is a framework which implements the logic of OAuth1 or OAuth2 without assuming a specific HTTP request object or web framework.
-- [psycopg2](https://pypi.org/project/psycopg2/) - Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
-- [PyJWT](https://pypi.org/project/PyJWT/) - A Python implementation of RFC 7519.
-- [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
-- [pytz](https://pypi.org/project/pytz/) - This is a set of Python packages to support use of the OpenID decentralized identity system in your application, update to Python 3
-- [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - Provides first-class OAuth library support for Requests.
-- [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
-
-[Back to top](#table-of-content)
-
 # **Testing**
 
-Please refer to the [Testing](TESTING.md) file for more information about the testing of theMaintenanceCo.
+Please refer to the [Testing](TESTING.md) file for more information about the testing of Quotme.
 
 [Back to top](#table-of-content)
 
@@ -466,117 +417,41 @@ Please refer to the [Testing](TESTING.md) file for more information about the te
 
 ## Deployment To Heroku
 
-The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the steps below:
 
-1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+1. Navigate to your [Heroku dashboard](https://dashboard.heroku.com/apps).
 
-2. Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'.
+2. Click "New" and select "Create new app".
 
-3. When the repository creation is done click 'Gitpod' to open the repository in the gitpod IDE.
+![Heroku](src/assets/readme/deploy/1.png)
 
-4. Now it's time to install Django and the supporting libraries that are needed. Type the commands below to do this.
+3. Input a meaningful name for your app and choose the region best suited to your location.
 
-- ```pip3 install 'django<4' gunicorn```
-- ```pip3 install 'dj_database_url psycopg2```
-- ```pip3 install 'dj3-cloudinary-storage```
+![Heroku](src/assets/readme/deploy/2.png)
 
-5. When Django and the libraries are installed we need to create a requirements file.
+4. Select "Deploy" from the tabs.
 
-- ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
+![Heroku](src/assets/readme/deploy/3.png)
 
-6. Now it's time to create the project.
+5. Select "GitHub - Connect to GitHub" from deployment methods.
 
-- ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
+![Heroku](src/assets/readme/deploy/4.png)
 
-7. When the project is created we can now create the application.
+6. Click "Connect to GitHub" in the created section.
 
-- ```python3 manage.py startapp APP_NAME``` - This will create your application
+![Heroku](src/assets/readme/deploy/5.png)
 
-8. Add the application to settings.py
+7. Search for the GitHub repository by name.
 
-9. Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+8. Click to connect to the relevant repo.
 
-- ```python3 manage.py migrate``` - This will migrate the changes
-- ```python3 manage.py runserver``` - This runs the server. To test it, click the open browser button that will be visible after the command is run.
+9. Either click `Enable Automatic Deploys` for automatic deploys or `Deploy  Branch` to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
 
-10. Now it is time to create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+![Heroku](src/assets/readme/deploy/6.png)
 
-- Head on to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
+10. Click `View` to view the deployed site.
 
-- In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
-
-11. Now it's time to enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
-
-12. To add a database to the app you need to go to the resources tab ->> add-ons, search for 'Heroku Postgres' and add it.
-
-13. Go to the settings tab and click on the reveal Config Vars button. Copy the text from DATABASE_URL (because we are going to need it in the next step).
-
-14. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
-
-- ```import os``` - This imports the os library
-- ```os.environ["DATABASE_URL_FROM HEROKU"]``` - This sets the environment variables.
-- ```os.environ["SECRET_KEY"]``` - Here you can choose whatever secret key you want.
-
-15. Now we are going to head back to Heroku to add our secret key to config vars. See screenshot below.
-
-16. Now we have some preparations to do connected to our environment and settings.py file. In the settings.py, add the following code:
-
-```import os```
-
-```import dj_database_url```
-
-```if os.path.isfile("env.py"):```
-
-```import env```
-
-17. In the settings file, remove the insecure secret key and replace it with:
-
-```SECRET_KEY = os.environ.get('SECRET_KEY')```
-
-18. Now we need to comment out the old database setting in the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
-
-Now, add the link to the DATABASE_URL that we added to the environment file earlier.
-
-19. Save all your fields and migrate the changes.
-
-```python3 manage.py migrate```
-
-20. Now we are going to get our connection to Cloudinary connection working (this is were we will store our static files). First you need to create a Cloudinary account and from the Cloudinary dashboard copy the API Environment Variable.
-
-21. Go back to the env.py file in Gitpod and add the Cloudinary url (it's very important that the url is correct):
-
-```os.environ["CLOUDINARY_URL"] = "cloudinary://************************"```
-
-22. Go back to Heroku and add the Cloudinary url in Config Vars. We also need to add a disable collectstatic variable to get our first deployment to Heroku to work.
-
-23. In the settings.py file on Gitpod. We now need to add our Cloudinary Libraries we installed earlier to the installed apps. Here it is important to get the order correct.
-
-24. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file.
-
-25. Now it's time to link the file to the Heroku templates directory.
-
-26. Let's change the templates directory to TEMPLATES_DIR in the teamplates array.
-
-27. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to which hosts that are allowed.
-
-28. Now we just need to add some files to Gitpod.
-
-- Create 3 folders in the top level directory: **media**, **static**, **templates**
-- Create a file called **Procfile* and add the following line of code to it: ```web: gunicorn PROJ_NAME.wsgi?```
-
-29. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
-
-- ```git add .```
-- ```git commit -m "Deployment Commit```
-- ```git push```
-
-30. Before moving on to the Heroku deployment we just need to add one more thing in the config vars. We need to add "PORT" in the KEY input field and "8000" in the VALUE field. If we don't add this there might be problems with the deployment.
-
-31. Now it's time for deployment. Scroll to the top of the settings page in Heroku and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
-
-32. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
-
-The link to the live theMaintenanceCo website on Heroku can be found [here](https://the-maintenance-co.herokuapp.com/). And the Github repository can be found [here](https://github.com/andrebraga7/the-maintenance-co).
+![Heroku](src/assets/readme/deploy/7.png)
 
 [Back to top](#table-of-content)
 
@@ -597,13 +472,7 @@ To clone and set up this project you need to follow the steps below.
 3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
 4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
 5. To be able to get the project to work you need to install the requirements. This can be done by using the command below:
-
-* ```pip3 install -r requirements.txt``` - This command downloads and install all required dependencies that is stated in the requirements file.
-
-6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
-
-* ```python3 manage.py migrate``` - This will do the necessary migrations.
-* ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
+* ```npm install``` - This command downloads and install all required dependencies that is stated in the package.json file.
 
 [Back to top](#table-of-content)
 
