@@ -28,8 +28,8 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Discover](#discover-page)
     - [Authors](#authors-page)
     - [Quote](#quote-page)
-        - [*Comment*](#home-page)
-        - [*Reply*](#home-feed)
+        - [*Comment*](#comment)
+        - [*Reply*](#reply)
     - [Saved](#saved-page)
     - [Profile](#profile-page)
     - [Sign up](#)
@@ -327,6 +327,16 @@ The profile page is where the user can view all profile related information, lik
 
 [Back to top](#table-of-content)
 
+## Sign up page
+
+This is where the user can create an account. The username must have between 5 and 15 characters long alhanumeric underline and @ are allowed characters and must contain at least one alphabet character.
+
+<details><summary><b>Sign up</b></summary>
+
+![Sign up](src/assets/readme/features/sign_up.png)
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
@@ -361,6 +371,11 @@ The profile page is where the user can view all profile related information, lik
 - [**Credits**](#credits)
 
 - [**Acknowledgements**]()
+
+
+
+
+
 
 
 
