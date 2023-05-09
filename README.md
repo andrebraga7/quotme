@@ -8,15 +8,6 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
 
 ![Quotme](src/assets/readme/main.jpg)
 
-
-
-
-
-
-
-
-![TheMaintenanceCo](readme/assets/images/cover.png)
-
 # Table of Content
 
 - [**Project**](#project)
@@ -24,6 +15,50 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Site Users Goal](#site-users-goal)
     - [Site Owners Goal](#site-owners-goal)
     - [Project Management](#project-management)
+
+
+
+# **Project**
+
+## Objective
+The objective of this project is to create a platform for users to share, discover, like and save their favourite quotes from, books, lyrics, movies, statements, original quotes from the user and others. The website allows the user to create an account, connect with other users through following their profile, sharing quotes, commenting, replying to comments, liking and saving their favourite quotes. The website also features a search bar to make it easy for user to find what they are looking for. On top of that, the platform will feature an authors page with the top ten most popular quoted author's on the website.
+
+## Site Users Goal
+The site user can share, discover and save different quotes from the community. It serves as a platform to share content and interact throught comments and replies.
+
+## Site Owners Goal
+The site owners goal is to provide a platform for user to share their favourite quotes. The site makes it possible for users to interact with each other creating a community like atmosphere.
+
+## Project Management
+
+### Github Board
+In order to keep everything organized I used Github's built in project board to add all the different user stories and to move them along as they we're being completed. It also allowed me to organize everything through epics and interations. This way it's easier to keep track and create a plan for implementing all the features. With this project board it also made it possible to create labels and use the MoSCoW (Must have, Should have, Could have and Won't have) approach in each interation.
+
+<details><summary><b>Github's project management board</b></summary>
+
+![User Stories](src/assets/readme/project_board.png)
+![Iterations](src/assets/readme/milestones.png)
+</details><br/>
+
+[Back to top](#table-of-content)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - [**User Experience (UX)**](#user-experience-ux)
     - [Wireframes](#wireframes)
@@ -75,21 +110,9 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
 
 - [**Acknowledgements**]()
 
-# **Project**
 
-## Objective
-The objective of this project was to create a dashboard job management tool that can be used by a maintenance company to keep track of jobs or tasks that need to be completed. It also serves as a tool for client, employee and management to communicate the different equipment maintenance needs. This was a good opportunity for me to develop and demonstrate my knowledge of HTML, CSS, JS, Python and the Django Framework all working together in a Full Stack solution.
 
-## Site Users Goal
-The site user if a client can log jobs for different maintenance needs of equipments in the restaurant. If an employee of the company it serves as a platform to organize all assigned jobs and a way to keep track of all the work done and feedback given.
 
-## Site Owners Goal
-The site owner uses the dashboard to organize the different maintenance services and is a powerfull tool to share with the company's clients.
-
-## Project Management
-
-### Github Board
-In order to keep everything organized I used Github's built in project board to add all the different user stories and to move them along as they we're being completed. It worked really well for me and had a natural logical feel to it.
 
 <details><summary><b>Github's project management board</b></summary>
 
