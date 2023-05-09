@@ -34,6 +34,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Profile](#profile-page)
     - [Sign up](#sign-up-page)
     - [Login](#login-page)
+- [**Future Features**](#future-features)
 
 
 
@@ -349,7 +350,14 @@ The loggin page has a form with username and password inputs. If the information
 
 [Back to top](#table-of-content)
 
+# **Future Features**
 
+- Add an internal messaging page;
+- Add a password reset page with email confirmation;
+- Add social sign in to the loggin and sign up pages;
+- Add more automated testing;
+
+[Back to top](#table-of-content)
 
 
 
