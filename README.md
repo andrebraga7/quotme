@@ -32,8 +32,8 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
         - [*Reply*](#reply)
     - [Saved](#saved-page)
     - [Profile](#profile-page)
-    - [Sign up](#)
-    - [Login](#)
+    - [Sign up](#sign-up-page)
+    - [Login](#login-page)
 
 
 
@@ -338,7 +338,16 @@ This is where the user can create an account. The username must have between 5 a
 
 [Back to top](#table-of-content)
 
+## Login page
 
+The loggin page has a form with username and password inputs. If the information provided by the user is correct, the user is redirected to the last visited page.
+
+<details><summary><b>Login</b></summary>
+
+![Login](src/assets/readme/features/login.png)
+</details><br/>
+
+[Back to top](#table-of-content)
 
 
 
