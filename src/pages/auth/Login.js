@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useValidation } from "../../hooks/useValidation";
 
 // React Bootstrap imports
 import Form from "react-bootstrap/Form";
@@ -27,11 +28,11 @@ function Login() {
   });
 
   const [errors, setErrors] = useState({});
-  const [validated, setValidated] = useState(false);
 
   // Variables definitions
   const { username, password } = logInData;
   const navigate = useNavigate();
+  const { validated } = useValidation();
 
   // Event handlers
   const handleChange = (event) => {
@@ -39,17 +40,6 @@ function Login() {
       ...logInData,
       [event.target.name]: event.target.value,
     });
-  };
-
-  const handleValidation = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      setValidated(true);
-      return;
-    } else {
-      handleSubmit(event);
-    }
   };
 
   const handleSubmit = async (event) => {
@@ -69,7 +59,11 @@ function Login() {
       <Col className="my-auto" md={6}>
         <Card className={styles.Container} body>
           <h1 className={styles.Header}>LOGIN</h1>
-          <Form onSubmit={handleValidation} noValidate validated={validated}>
+          <Form
+            onSubmit={useValidation(handleSubmit)}
+            noValidate
+            validated={validated}
+          >
             <FloatingLabel
               className={styles.Group}
               controlId="floatingUsername"
