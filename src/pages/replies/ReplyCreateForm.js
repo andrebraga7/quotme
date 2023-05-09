@@ -55,6 +55,8 @@ function ReplyCreateForm(props) {
           rows={2}
           value={content}
           onChange={handleChange}
+          maxLength="255"
+          required
         />
       </Form.Group>
       <div className="text-end">
