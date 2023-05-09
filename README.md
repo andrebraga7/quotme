@@ -19,7 +19,17 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Wireframes](#wireframes)
     - [User Stories](#user-stories)
     - [Site Structure](#site-structure)
-    - [Design Choices](#design-choices)    
+    - [Design Choices](#design-choices)  
+- [**Features**](#existing-features)
+    - [Home page](#)
+    - [Discover](#)
+    - [Authors](#)
+    - [Quote](#)
+    - [Saved](#)
+    - [Profile](#)
+    - [Sign up](#)
+    - [Login](#)
+
 
 
 
@@ -170,6 +180,18 @@ To find out more about this font, please visit the [Google Fonts website](https:
 
 [Back to top](#table-of-content)
 
+# **Features**
+All the project features are detailed and listed bellow:
+
+## Home page
+
+### Home
+This is the main ladning page with a top navigation menu with link to all pages and subheadings explaining the website features.
+
+<details><summary><b>Home page</b></summary>
+
+![Home page]()
+</details><br/>
 
 
 
@@ -179,32 +201,6 @@ To find out more about this font, please visit the [Google Fonts website](https:
 
 
 
-
-- [**Features**](#existing-features)
-    - [Home page](#home-page)
-        - [*Home*](#home)
-        - [*Navigation*](#navigation)
-        - [*About*](#about)
-        - [*Contact*](#contact)
-        - [*Account*](#account)
-        - [*Sign up*](#sign-up)
-        - [*Login*](#login)
-    - [Manager dashboard](#manager-dashboard)
-        - [*Manager menu*](#manager-menu)
-        - [*New jobs*](#new-jobs)
-        - [*Active jobs*](#active-jobs)
-        - [*Completed jobs*](#completed-jobs)
-        - [*Filter*](#filter)
-        - [*Users*](#users)
-    - [Client dashboard](#client-dashboard)
-        - [*Client menu*](#client-menu)
-        - [*Jobs*](#jobs)
-        - [*Categories*](#categories)
-        - [*Equipments*](#equipments)
-        - [*Add job*](#add-job)
-        - [*Send message*](#send-message)
-    - [Employee dashboard](#client-dashboard)
-        - [*Jobs*](#employee-dashboard)
 
 - [**Future Features**](#future-features)
 
@@ -239,18 +235,7 @@ To find out more about this font, please visit the [Google Fonts website](https:
 
 
 
-# **Features**
-All the project features are detailed and listed bellow:
 
-## Home page
-
-### Home
-This is the main ladning page with a top navigation menu with link to all pages, a hero image with a call to action button that takes the user to the contact page and a footer.
-
-<details><summary><b>Home page</b></summary>
-
-![Home page](readme/assets/images/home_page.png)
-</details><br/>
 
 ### Navigation
 The main navigation menu has a black background with a brand text on the left and navigation link to the right, which are all offwhite. The visible links change depending if a user is looged in or not:

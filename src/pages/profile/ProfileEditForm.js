@@ -94,7 +94,11 @@ function ProfileEditForm() {
               <Col md={6}>
                 <Form.Group controlId="formFile">
                   {image && (
-                    <Image className={styles.Image} src={image} roundedCircle />
+                    <Image
+                      src={image}
+                      className={styles.ProfileImage}
+                      roundedCircle
+                    />
                   )}
                   <div>
                     <Form.Label
