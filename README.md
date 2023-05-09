@@ -17,7 +17,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Project Management](#project-management)
 - [**User Experience (UX)**](#user-experience-ux)
     - [Wireframes](#wireframes)
-    - [User Stories](#)
+    - [User Stories](#user-stories)
     - [Site Structure](#)
     - [Design Choices](#)    
 
@@ -68,6 +68,69 @@ In order to develop this project I first developed the API backend using Django-
 
 [Back to top](#table-of-content)
 
+## User Stories
+The first step for this project was to write all the epics and user stories. They were used to guide the development and were divided in seven epics: access the website, create a quote, interact with quotes, discover page, authors page, quote page and profile page. In the [testing](#testing) section I evaluate the outcome of each.
+
+### Access the website
+|   |   |
+|--------|--------|
+| As a user I can view a navbar so that I can navigate between pages. | &check; |
+| As a user I can navigate between pages so that I can view content without page refresh. | &check; |
+| As a user I can create an account so that I can have my own profile page. | &check; |
+| As a user I can login to the website so I can have access to all features. | &check; |
+| As a user I can stay logged in until I decide to logout so that I can have a good user experience. | &check; |
+| As a logged out user I can view the signup and login options so that I can signup or login. | &check; |
+
+### Create a quote
+|   |   |
+|--------|--------|
+| As a user I can add a quote so that I can share it with the community. | &check; |
+| As a user I can start typing an author of a quote so that It automatically loads available authors. | &check; |
+
+### Interact with quotes
+|   |   |
+|--------|--------|
+| As a user I can view the details of a single quote so that I can learn more about it. | &check; |
+| As a user I can like a quote so that I can show my interest in a quote. | &check; |
+| As a user I can save a quote so that I can view it in my saved quotes. | &check; |
+
+### Discover page
+|   |   |
+|--------|--------|
+| As a user I can view the most recent quotes so that I am up to date with the latest content. | &check; |
+| As a user I can view quotes by categories so that I can view only what interests me. | &check; |
+| As a user I can search for a quotes by keywords so that I can view what interest me. | &check; |
+
+### Authors page
+|   |   |
+|--------|--------|
+| As a user I can view the most popular authors so that I can view their quotes. | &check; |
+| As a user I can view an authors page so that I can view all quotes related to that author.  | &check; |
+
+### Quote page
+|   |   |
+|--------|--------|
+| As a user I can view the quote page so that I can read the comments about it. | &check; |
+| As a quote owner I can edit the quote title and content so that I can make corrections. | &check; |
+| As a quote owner I can delete a quote so that I can remove it from the website. | &check; |
+| As a user I can view a quote's comments so that I can read what users are saying. | &check; |
+| As a logged in user I can create a comment in a quote so that I can share my thoughts. | &check; |
+| As a logged in user I can edit a comment so that I can update the content. | &check; |
+| As a logged in user I can delete a comment so that I can remove it from a quote. | &check; |
+| As a user I can view a reply to a comment so that I can read what user are saying. | &check; |
+| As a logged in user I can reply to a comment so that I can continue a conversations. | &check; |
+| As a logged in user I can edit a reply so that I can update the content. | &check; |
+| As a logged in user I can delete a reply so that I can remove it from a comment. | &check; |
+
+### Profile page
+|   |   |
+|--------|--------|
+| As a user I can view other users profiles so that I can see their quotes and learn more about them. | &check; |
+| As a user I can view the statistics of a profile: number of quotes, followers, following and bio so that I can learn more about them. | &check; |
+| As a user I can view all quotes by a specific user so that I can catch up on their content. | &check; |
+| As a logged in user I can follow or unfollow a user so that I can view or remove quotes created by them in my feed. | &check; |
+| As a logged in user I can edit my profile so that I can update my bio or profile image. | &check; |
+| As a logged in user I can change my username and password so that I can change my display name and keep my account safe. | &check; |
 
 
 
@@ -82,12 +145,6 @@ In order to develop this project I first developed the API backend using Django-
 
 
 
-
-- [**User Experience (UX)**](#user-experience-ux)
-    - [Wireframes](#wireframes)
-    - [User Stories](#user-stories)
-    - [Site Structure](#site-structure)
-    - [Design Choices](#design-choices)
 
 - [**Features**](#existing-features)
     - [Home page](#home-page)
@@ -145,10 +202,6 @@ In order to develop this project I first developed the API backend using Django-
 
 # **User Experience (UX)**
 
-
-
-## User Stories
-This first step for this project was to write the user stories. They were used to guide the development and were divided in three user types: manager, client an employee. In the [testing](#testing) section I evaluate the outcome of each.
 
 ### Manager site user
 |   |   |   |
