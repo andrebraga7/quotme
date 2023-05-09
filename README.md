@@ -6,7 +6,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
 
 [You can view the live website here](https://quotme.herokuapp.com)
 
-![Quotme](src/assets/readme/main.jpg)
+![Quotme](src/assets/readme/cover.png)
 
 # Table of Content
 
