@@ -48,6 +48,8 @@ function ReplyEditForm(props) {
           rows={2}
           value={formContent}
           onChange={handleChange}
+          maxLength="255"
+          required
         />
       </Form.Group>
       <div className="text-end">
