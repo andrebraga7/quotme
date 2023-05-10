@@ -208,18 +208,12 @@ Google Lighthouse in Chrome Developer Tools was used to test the application wit
  Best Practises had a lower score due to some API Failed Request 401 (Unauthorized) errors being logged to the console. This however, is a known issue with the site trying to make a request to check for logged in user on loading.
 
 ### Peer Review
-Additional testing of the application was made by users outside of the software development scope. Some small layout and styling errors were found and fixed. The feedback given was positive and relates to the project goals of a simple and easy solution.
-
-
-
-
-
-
-
-
-
+Additional testing of the application was made by users outside of the software development scope. Some small layout and styling errors were found and fixed. The feedback given was positive and relates to the project goals of a simple and good user experience.
 
 ## Known bugs
-The only known bugs so far are some minor layouts for positioning and sizing of elements on the page in the various screen sizes. This all can be fixed easily with some css and bootstrap adjustments.
+At the moment of writing this testing file the known bugs are:
+
+- API Failed Request 401 (Unauthorized) errors being logged to the console on page load;
+- Safari browser block API request because by default it prevents cross-site-tracking, due to the API being on a different url than this project. The work-around if turning this option off in the browser settings.
 
 Back to [**README file.**](README.md)
