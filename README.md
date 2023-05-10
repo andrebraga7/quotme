@@ -391,7 +391,7 @@ The page that is displayed when the router cannot find the requested url or page
 [Back to top](#table-of-content)
 
 ## Frameworks & Software
-- [React](https://react.dev/) - A front end framework. React lets you build user interfaces out of individual pieces called components;
+- [React](https://react.dev/) - A front end framework. React lets you build user interfaces out of individual pieces called components, this was usefull to the project as it allowed components to be updated without page refresh providign a better user experience;
 - [React-Bootstrap](https://react-bootstrap.github.io/) - A CSS framework that helps building solid, responsive, mobile-first sites;
 - [Balsamiq](https://balsamiq.com/) - Used to create the wireframe;
 - [Github](https://github.com/) - Used to host and edit the website;
