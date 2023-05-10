@@ -216,4 +216,6 @@ At the moment of writing this testing file the known bugs are:
 - API Failed Request 401 (Unauthorized) errors being logged to the console on page load;
 - Safari browser block API request because by default it prevents cross-site-tracking, due to the API being on a different url than this project. The work-around if turning this option off in the browser settings.
 
+[Back to top](#table-of-content)
+
 Back to [**README file.**](README.md)
