@@ -92,7 +92,7 @@ function Comment(props) {
             onClick={() => setShowReplies((showReplies) => !showReplies)}
           >
             <i className="fa-solid fa-reply"></i>
-            {replies_count}
+            <span>{replies_count ? replies_count : "0"}</span>
             {replies_count > 0 ? (
               <span className={styles.ViewReplies}>
                 {showReplies ? "Hide replies" : "View all replies"}
