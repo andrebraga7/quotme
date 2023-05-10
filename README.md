@@ -375,6 +375,7 @@ The page that is displayed when the router cannot find the requested url or page
 - Add an internal messaging page;
 - Add a password reset page with email confirmation;
 - Add social sign in to the loggin and sign up pages;
+- Add profile image processing capabilities;
 - Add more automated testing;
 
 [Back to top](#table-of-content)
