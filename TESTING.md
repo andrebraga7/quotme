@@ -134,7 +134,32 @@ At the end of the project ESLint passed all the code with no known validation is
 
 [Back to top](#table-of-content)
 
+## Additional Testing
 
+### Manual Testing
+
+In adition to the validations and tests stated above, I have made several manual tests throught the development of the project, some of theses tests are listed bellow:
+
+- Viewing all quotes logged out user;
+- Viewing all quotes as logged in user;
+- Searching for quotes throught the search input;
+- Filtering quotes by category;
+- Only viewing quotes by followed user in the home feed;
+- Viewing quotes by specific author;
+- Viewing other users profile page and quotes;
+- Creating an account;
+- Loggin in to the website;
+- Following and unfollowing a user;
+- Adding a quote;
+- Editing a quote;
+- Deleting a quote;
+- Editing profile page;
+- Liking and savind a quote;
+- Commenting on a quote;
+- Editing and deleting a comment;
+- Replying to a comment;
+- Editing and deleting a reply;
+- Trying to access broken url and showing 404 page;
 
 
 
