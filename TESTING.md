@@ -161,48 +161,8 @@ In adition to the validations and tests stated above, I have made several manual
 - Editing and deleting a reply;
 - Trying to access broken url and showing 404 page;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Additional Testing
-
-### Manual Testing
-
-In adition to the validations and tests stated above, I have made several manual tests throught the development of the project, some of theses tests are listed bellow:
-
-- Adding, editing and deleting jobs;
-- Adding, editing and deleting categories;
-- Adding, editing and deleting equipments;
-- Adding, editing and deleting users;
-- Inputing invalid data in all the forms fields of the website;
-- Inputing wrong URLs to test redirection to the 404 page not found;
-- Trying to access content out of the user permissions scope;
-- Adding, editing and deleting job feedback;
-- Requesting and aproving job deletions;
-- Marking jobs as done;
-- Reopening jobs;
-
 ### Automated Testing
-I have done some automated testing for the project, however due to time limitations and prioritization of other user features and tasks I have only managed to provide a 28% coverage for the tests. Automated tests can be run by typing the command - *python3 manage.py test*
-
-<details><summary><b>Coverage report</b></summary>
-
-![Coverage report](readme/assets/images/coverage_report.png)
-</details><br/>
+I have done some automated testing for the project, however due to time limitations and prioritization of other user features and tasks I have only manages to write a few tests. Automated tests can be run by typing the command - *npm test*
 
 [Back to top](#table-of-content)
 
@@ -232,7 +192,7 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 ### Browser Compatibility
 - Google Chrome Version (106.0.5249.119)
 - Mozilla Firefox (version 105.0.3)
-- Apple Safari (version 16.0)
+- Apple Safari (version 16.0) 
 - Microsoft Edge (version 106.0.1370.47)
 
 [Back to top](#table-of-content)
@@ -240,13 +200,24 @@ The responsive design tests were carried out manually with [Google Chrome DevToo
 ### Lighthouse
 Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. The testing showed the following:
 
- - Performance: 95;
- - Accessibility: 87;
- - Best Practises: 92;
- - SEO: 89;
+ - Performance: 97;
+ - Accessibility: 100;
+ - Best Practises: 83;
+ - SEO: 100;
+
+ Best Practises had a lower score due to some API Failed Request 401 (Unauthorized) errors being logged to the console. This however, is a known issue with the site trying to make a request to check for logged in user on loading.
 
 ### Peer Review
-Additional testing of the application was made by user outside of the software development scope. Some small error and spelling grammaer error were found and fixed. The feedback given was positive and relates to the project goals of a simple and easy solution.
+Additional testing of the application was made by users outside of the software development scope. Some small layout and styling errors were found and fixed. The feedback given was positive and relates to the project goals of a simple and easy solution.
+
+
+
+
+
+
+
+
+
 
 ## Known bugs
 The only known bugs so far are some minor layouts for positioning and sizing of elements on the page in the various screen sizes. This all can be fixed easily with some css and bootstrap adjustments.
