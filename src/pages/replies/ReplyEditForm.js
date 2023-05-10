@@ -50,6 +50,7 @@ function ReplyEditForm(props) {
           onChange={handleChange}
           maxLength="255"
           required
+          autoFocus
         />
       </Form.Group>
       <div className="text-end">

@@ -49,6 +49,7 @@ function CommentEditForm(props) {
           value={formContent}
           onChange={handleChange}
           maxLength="255"
+          autoFocus
         />
       </Form.Group>
       <div className="text-end">
