@@ -54,36 +54,60 @@
 [Back to top](#table-of-content)
 
 ### Discover page
-|   |   |
-|--------|--------|
-| As a user I can view the most recent quotes so that I am up to date with the latest content. | &check; |
-| As a user I can view quotes by categories so that I can view only what interests me. | &check; |
-| As a user I can search for a quotes by keywords so that I can view what interest me. | &check; |
+
+- As a user I can view the most recent quotes so that I am up to date with the latest content.
+    - The Discover page shows the user all the quotes from the community, ordered by the most recent ones.
+
+- As a user I can view quotes by categories so that I can view only what interests me.
+    - Selecting a category on the dropdown menu filters all quotes by that specific category.
+
+- As a user I can search for a quotes by keywords so that I can view what interest me.
+    - Entering text in the search field searched all the quotes by username, author and content.
 
 [Back to top](#table-of-content)
 
 ### Authors page
 
+- As a user I can view the most popular authors so that I can view their quotes.
+    - The authors page shows the most popupar authors by quote numbers.
 
-| As a user I can view the most popular authors so that I can view their quotes. | &check; |
-| As a user I can view an authors page so that I can view all quotes related to that author.  | &check; |
+- As a user I can view an authors page so that I can view all quotes related to that author.
+    - Clicking on an authors opens the author page with details and all quotes for that given author.
 
 [Back to top](#table-of-content)
 
 ### Quote page
-|   |   |
-|--------|--------|
-| As a user I can view the quote page so that I can read the comments about it. | &check; |
-| As a quote owner I can edit the quote title and content so that I can make corrections. | &check; |
-| As a quote owner I can delete a quote so that I can remove it from the website. | &check; |
-| As a user I can view a quote's comments so that I can read what users are saying. | &check; |
-| As a logged in user I can create a comment in a quote so that I can share my thoughts. | &check; |
-| As a logged in user I can edit a comment so that I can update the content. | &check; |
-| As a logged in user I can delete a comment so that I can remove it from a quote. | &check; |
-| As a user I can view a reply to a comment so that I can read what user are saying. | &check; |
-| As a logged in user I can reply to a comment so that I can continue a conversations. | &check; |
-| As a logged in user I can edit a reply so that I can update the content. | &check; |
-| As a logged in user I can delete a reply so that I can remove it from a comment. | &check; |
+
+- As a user I can view the quote page so that I can read the comments about it.
+- As a user I can view a quote's comments so that I can read what users are saying.
+    - The quote page displays information specific to the quote and shows all comments underneath.
+
+- As a quote owner I can edit the quote title and content so that I can make corrections.
+    - If the user is the quote owner he can view the edit button to edit a quote.
+
+- As a quote owner I can delete a quote so that I can remove it from the website.
+    - If the user is the quote owner he can view the delete button to delete a quote.
+
+- As a logged in user I can create a comment in a quote so that I can share my thoughts.
+    - Logged in users can view the comment create form component to create a comment.
+
+- As a logged in user I can edit a comment so that I can update the content.
+    - If the user is the comment owner the edit button is visisble.
+
+- As a logged in user I can delete a comment so that I can remove it from a quote.
+    - If the user is the comment owner the delete button is visisble.
+
+- As a user I can view a reply to a comment so that I can read what user are saying.
+    - If a comment has replies the user can click the View all replies to view replies.
+
+- As a logged in user I can reply to a comment so that I can continue a conversations.
+    - Logged in users can view the comment reply form to reply to a comment.
+
+- As a logged in user I can edit a reply so that I can update the content.
+    - If the user is the owner of a reply the edit button becomes visisble.
+
+- As a logged in user I can delete a reply so that I can remove it from a comment.
+    - If the user is the owner of a reply the delete button becomes visible.
 
 [Back to top](#table-of-content)
 
