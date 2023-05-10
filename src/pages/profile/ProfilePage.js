@@ -24,7 +24,7 @@ function ProfilePage() {
       try {
         const [{ data: profileData }, { data: quotesData }] = await Promise.all(
           [
-            axiosReq.get(`/profiles/${id}`),
+            axiosReq.get(`/profiles/${id}/`),
             axiosReq.get(`/quotes/?owner__profile=${id}`),
           ]
         );

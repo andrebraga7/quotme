@@ -79,7 +79,7 @@ function QuoteEditForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axiosRes.put(`/quotes/${id}`, quoteData);
+      const { data } = await axiosRes.put(`/quotes/${id}/`, quoteData);
       navigate(`/quotes/${data.id}`);
     } catch (error) {
       setErrors(error.response?.data);

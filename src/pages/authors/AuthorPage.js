@@ -34,7 +34,7 @@ function AuthorPage() {
       try {
         const [{ data }, { data: authorData }] = await Promise.all([
           axiosReq.get(`/quotes/?author=${id}&search=${query}+${category}`),
-          axiosReq.get(`/authors/${id}`),
+          axiosReq.get(`/authors/${id}/`),
         ]);
         const { name, quotes_count } = authorData;
         setQuotes(data);

@@ -27,7 +27,7 @@ function QuotePage() {
     const handleMount = async () => {
       try {
         const [{ data: quote }, { data: comments }] = await Promise.all([
-          axiosReq.get(`/quotes/${id}`),
+          axiosReq.get(`/quotes/${id}/`),
           axiosReq.get(`/comments/?quote=${id}`),
         ]);
         setQuote({ results: [quote] });
