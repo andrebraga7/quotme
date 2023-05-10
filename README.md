@@ -71,7 +71,7 @@ In order to keep everything organized I used Github's built in project board to 
 </details><br/>
 
 ### Django-REST API Backend
-In order to develop this project I first developed the API backend using Django-REST Framework. More information and details of the API can be found in the [Quotme-api repository](https://github.com/andrebraga7/quotme-api)
+In order to create this project I first developed the API backend using Django-REST Framework. More information and details of the API can be found in the [Quotme-api repository](https://github.com/andrebraga7/quotme-api)
 
 [Back to top](#table-of-content)
 
@@ -506,6 +506,8 @@ To clone and set up this project you need to follow the steps below.
 
 # Acknowledgements
 Quotme was creates as the fifth portfolio project for the Full Stack Software Developer course from [**Code Institute**](https://codeinstitute.net). I would like to thank my mentor, [**Antonio Rodriguez**](https://www.linkedin.com/in/antonio-rodr%C3%ADguez-bb9b99b7/) for his guidance and support throught this project and the Code Institute team.
+
+I would also like to thank the most important person that helped me throughout the entire course, my wife Evellyn. She has helped me through the dificult times and encouraged me to carry on. Here we are, te amo!
 
 [**Andre Braga**](https://www.linkedin.com/in/andrestrevisan/) 2023
 
