@@ -49,7 +49,7 @@ function QuoteEditForm() {
     setShowAuthors(false);
     const timer = setTimeout(() => {
       fetchAuthors();
-    }, 1000);
+    }, 500);
     return () => {
       clearTimeout(timer);
     };
@@ -202,7 +202,7 @@ function QuoteEditForm() {
               className={`${btnStyles.Button} ${btnStyles.Dark} ${btnStyles.ButtonSpace}`}
               type="submit"
             >
-              Edit quote
+              Save quote
             </Button>
           </Form>
         </Card>

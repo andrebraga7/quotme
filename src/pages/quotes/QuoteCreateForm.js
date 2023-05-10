@@ -56,7 +56,7 @@ function QuoteCreateForm() {
     setShowAuthors(false);
     const timer = setTimeout(() => {
       fetchAuthors();
-    }, 1000);
+    }, 500);
     return () => {
       clearTimeout(timer);
     };

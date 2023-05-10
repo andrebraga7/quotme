@@ -3,6 +3,7 @@
   font-family: "Libre Franklin", sans-serif;
   background-color: #f9f8f4;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .Main {
@@ -24,6 +25,10 @@ i:hover {
 
 hr {
   margin: 0.5em;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
