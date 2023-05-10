@@ -112,14 +112,24 @@
 [Back to top](#table-of-content)
 
 ### Profile page
-|   |   |
-|--------|--------|
-| As a user I can view other users profiles so that I can see their quotes and learn more about them. | &check; |
-| As a user I can view the statistics of a profile: number of quotes, followers, following and bio so that I can learn more about them. | &check; |
-| As a user I can view all quotes by a specific user so that I can catch up on their content. | &check; |
-| As a logged in user I can follow or unfollow a user so that I can view or remove quotes created by them in my feed. | &check; |
-| As a logged in user I can edit my profile so that I can update my bio or profile image. | &check; |
-| As a logged in user I can change my username and password so that I can change my display name and keep my account safe. | &check; |
+
+- As a user I can view other users profiles so that I can see their quotes and learn more about them.
+    - Clicking on a username takes the user to the user's profile page that displays all information rlevant to the profile and all quotes created by the user.
+
+- As a user I can view the statistics of a profile: number of quotes, followers, following and bio so that I can learn more about them.
+    - The user's profile page displays the users number of quotes, followers, following and bio information.
+
+- As a user I can view all quotes by a specific user so that I can catch up on their content.
+    - The user's profile page displays all quotes created by the user.
+
+- As a logged in user I can follow or unfollow a user so that I can view or remove quotes created by them in my feed.
+    - Logged in users can follow or unfollow a profile. The Home feed page displays all quotes from users that are followed.
+
+- As a logged in user I can edit my profile so that I can update my bio or profile image.
+    - If the user is the profile owner the edit button becomes visible and clicking it takes the user to the profile edit form.
+
+- As a logged in user I can change my username and password so that I can change my display name and keep my account safe.
+    - If the user is the profile owner the change username and password buttons becomes visible and clicking them takes the user to the respectfull forms.
 
 [Back to top](#table-of-content)
 
