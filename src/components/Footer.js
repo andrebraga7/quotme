@@ -10,7 +10,13 @@ function Footer() {
     <footer>
       <Row className={styles.Footer}>
         <Col className="mx-auto my-auto" md={6}>
-          <span className="align-middle">Developed by Andre Braga</span>
+          <a
+            href="https://github.com/andrebraga7"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="align-middle">Developed by Andre Braga</span>
+          </a>
         </Col>
       </Row>
     </footer>
