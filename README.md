@@ -34,7 +34,7 @@ This project was developed as a Portfolio Project 5 - Advanced Front End Special
     - [Profile](#profile-page)
     - [Sign up](#sign-up-page)
     - [Login](#login-page)
-    - [404 - Not found]()    
+    - [404 - Not found](#404---not-found)    
 - [**Future Features**](#future-features)
 - [**Technologies Used**](#technologies-used)
     - [Languages](#languages)
