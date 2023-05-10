@@ -28,8 +28,6 @@
 - As a logged out user I can view the signup and login options so that I can signup or login.
     - The menu links change depending if the user is logged in or logged out.
 
-[Back to top](#table-of-content)
-
 ### Create a quote
 
 - As a user I can add a quote so that I can share it with the community.
@@ -37,8 +35,6 @@
 
 - As a user I can start typing an author of a quote so that It automatically loads available authors.
     - When adding an author to the quote the author field autocompletes with available authors from the db.
-
-[Back to top](#table-of-content)
 
 ### Interact with quotes
 
@@ -51,8 +47,6 @@
 - As a user I can save a quote so that I can view it in my saved quotes.
     - Clicking on the save icon saves the quote to the users profile that can be viewd in the Saved page.
 
-[Back to top](#table-of-content)
-
 ### Discover page
 
 - As a user I can view the most recent quotes so that I am up to date with the latest content.
@@ -64,8 +58,6 @@
 - As a user I can search for a quotes by keywords so that I can view what interest me.
     - Entering text in the search field searched all the quotes by username, author and content.
 
-[Back to top](#table-of-content)
-
 ### Authors page
 
 - As a user I can view the most popular authors so that I can view their quotes.
@@ -73,8 +65,6 @@
 
 - As a user I can view an authors page so that I can view all quotes related to that author.
     - Clicking on an authors opens the author page with details and all quotes for that given author.
-
-[Back to top](#table-of-content)
 
 ### Quote page
 
@@ -109,8 +99,6 @@
 - As a logged in user I can delete a reply so that I can remove it from a comment.
     - If the user is the owner of a reply the delete button becomes visible.
 
-[Back to top](#table-of-content)
-
 ### Profile page
 
 - As a user I can view other users profiles so that I can see their quotes and learn more about them.
@@ -133,118 +121,37 @@
 
 [Back to top](#table-of-content)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Testing User Stories
-
-- As a Manager I can access the managers dashboard so I can view new, active, and completed jobs.
-    - When the user signs in to the website it redirects to the dashboard where the user is presented with new, active and completed jobs.
-
-- As a Manager I can create, update and delete users so I can manage access and permissions.
-    - In the manager dashbaord thje user has access to the sign up page and user editing page, to create, edit or delete users.
-
-- As a Manager I can assign jobs to employees so I can plan what each employee will work on.
-    - In the new jobs accordion the user can click on assign job and select an employee to assign to.
-
-- As a Manager I can mark jobs as complete so I can review any feedback before closing the job.
-    - In the active jobs accordion the user can mark a job as done.
-
-- As a Manager I can approve job deletion request so I can verify the actual necessity of the job.
-    - When a client user request a job deletion an option becomes available in the active jobs accordion so the user can approva the job deletion.
-
-- As a Manager I can reopen jobs so that I can move them from the completed to the active jobs list.
-    - In the completed jobs list the user can select to reopen a job as required.
-
-- As a Manager I can reassign a job so that I can assign it to a different employee.
-    - In the active jobs accordion the manager can reassign a job to a different employee.
-
-- As a Client I can view the home page with a menu so I can navigate to different pages.
-    - On the top of the home page there is a menu with links to all the different pages.
-
-- As a Client I can access the dashboard so I can view new, active and completed jobs information.
-    - When the user signs in to the website it redirects to the dashboard where the user is presented with new, active and completed jobs.
-
-- As a Client I can add a new job so I can communicate the relevant maintenance needs.
-    - In the client dashboard the user can click on add new job where the he can add the job details and save.
-
-- As a Client I can edit a job so I can update relevant information for that job.
-    - In the new and active jobs list, the user can click on edit job to edit any relevant information.
-
-- As a Client - I can request that a job be deleted so I can remove it from the active list.
-    - When a job is in the active jobs list the user can click on request job deletion so a manager can approve the deletion.
-
-- As a Client  I can send a message so I can communicate with the company.
-    - In the dashboard the client can click on send message and a contact forms loads with the user email prepopulated.
-
-- As a Client - I can add / edit categories so that I can organize equipments in them.
-    - In the settings page the user can add, edit or delete categories as required.
-
-- As a Client - I can add an equipment so that I can create a job for it.
-    - In the settings page the user can add equipments as required.
-
-- As a Client - I can edit / delete and equipment so that I can organize the equipment list.
-    - In the settings page the user can edit or delete equipments as required.
-
-- As a User - I can filter the jobs so that I can search for the relevant ones.
-    - In the jobs list pages the user has a filter button that opens an input field that will filter throught the jobs id, title and description.
-
-- As an Employee I can access the employee dashboard so I can view jobs that have been assigned to me.
-    - When the user signs in to the website it redirects to the dashboard where the user is presented with active and completed jobs.
-
-- As an Employee I can add feedback to jobs so I can communicate any extra needs.
-    - In the active jobs accordion the user can click on add feedback to add any relevant information.
-
-- As an Employee I can mark jobs as done so I they can be moved to the completed list.
-    - In the active jobs accordion the user can click on mark job as done to move it to the completed list.
-
-[Back to top](#table-of-content)
-
 ## Code Validation
-The website's code has been tested using the W3C Markup Validator and JSHint. Some error were found regarding button elements being descendents of anchors and some form placeholder attributes now being allowed for select elements, this however is generated throught crispy forms automatic forms. The button elements was a quick fix, I just removed the button and styled the links as I wanted.
-Some other error are apearing in the W3C validator regarding script element havind unecessary type=text/javascript attribute, however, this is now normal practices.
-Another issue was some id and aria-label repetition errors, this is to do with the use of boostrap accordions and Jinja2 for loops.
-Some other aria-labelledby error where caught and fixed.
-
-[Back to top](#table-of-content)
+During the coding the Prettier and ESLint extensions were used throught which automaticaly checks the code for errors as it is typed. This helped debug any issues with the code earlier on during the development process.
 
 ### CSS Validaton
-When using the W3C CSS validator it didn't fin any error.
+When using the W3C CSS validator all code passed with no known issues.
 
-[Back to top](#table-of-content)
-
-### PEP Validation
-At the time of this project the website [pep8online](http://pep8online.com/) is currently offline. Usually I'm using that site to validate my Python code. Due to the site being offline I have followed Code Institutes workaround to add the PEP8 validator 'pycodestyle' to the Gitpod Workspace. So far no issues have been found
+![W3C Validator](src/assets/readme/css_validation.png)
 
 ### JavaScript Validation
-When validating the code in JSHont no major errors were returned, the only warnings where undefined variable connected to Bootstrap which is no problem and some let recomendations for ES6.
+At the end of the project ESLint passed all the code with no known validation issues.
 
 [Back to top](#table-of-content)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Additional Testing
 
