@@ -54,6 +54,7 @@ function ReplyCreateForm(props) {
           as="textarea"
           rows={2}
           value={content}
+          placeholder="Write a reply..."
           onChange={handleChange}
           maxLength="255"
           required
